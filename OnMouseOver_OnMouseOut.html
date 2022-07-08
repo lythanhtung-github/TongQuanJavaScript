@@ -1,0 +1,42 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>   
+    <p onmouseover="mouseover()" onmouseout="mouseout()" id="demo">Irure eiusmod quis nulla dolore mollit.</p>
+    <script>
+        function mouseover() {
+            document.getElementById("demo").style.color="blue";
+        }
+        function mouseout() {
+            document.getElementById("demo").style.color="red";
+        }
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>   
+    <p id="demo">Irure eiusmod quis nulla dolore mollit.</p>
+    <script>
+        var demo    = document.getElementById   ("demo");
+        demo.addEventListener("mouseover", mouseover);
+        demo.addEventListener("mouseout", mouseout);
+        function mouseover() {
+            document.getElementById("demo").style.color="blue";
+        }
+        function mouseout() {
+            document.getElementById("demo").style.color="red";
+        }
+    </script>
+  </body>
+</html>
