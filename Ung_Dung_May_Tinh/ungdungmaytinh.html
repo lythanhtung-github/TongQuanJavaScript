@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ứng dụng máy tính</title>
+        <style>
+            div {
+                padding-top: 20px;
+                padding-right: 20px;
+                padding-bottom: 20px;
+                padding-left: 80px;
+                }
+        </style>
+    </head>
+    <body>
+        <div style="background-color: #15ff009a; width: 450px; height: 300px;">
+            <table border = 1px style="background-color:yellow; width:300px; height: 200px;">
+                <thead> 
+                    <th colspan="2" style="text-align: center;width:75px; height: 75px; font-size: 40px;">MÁY TÍNH</th>
+
+                </thead>
+                <tbody>
+                    <tr>  
+                        <td>
+                            <input type="number" id="num1" placeholder="Nhập số thứ nhất">
+                        </td>
+                        <td> 
+                            <input type="number" id="num2" placeholder="Nhập số thứ hai">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center">
+                            <button onclick="Cong()">Cộng</button>
+                            <button onclick="Tru()">Trừ</button>
+                            <button onclick="Nhan()">Nhân</button>
+                            <button onclick="Chia()">Chia</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center"> <label style="font-size:20px; ">KẾT QUẢ:</label></td>
+                        <td><p id="result" style = "font-size: 30px;text-align: center;"></p></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+
+</html>
+<script src="ungdungmaytinh.js"></script>
