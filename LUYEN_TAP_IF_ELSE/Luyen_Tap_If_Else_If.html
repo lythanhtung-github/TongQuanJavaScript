@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Luyện tập if - else</title>
+    </head>
+    <body>       
+        <script>
+            let ten_dang_nhap = prompt('Nhập tên đăng nhập:','');
+            if (ten_dang_nhap == 'Admin'){
+                let mat_khau = prompt('Nhập mật khẩu:','');
+                if (mat_khau == 'TheMaster')
+                    { alert('Welcome!');}
+                else if (mat_khau == null) 
+                    {alert('Canceled');}
+                    else alert('Wrong password');
+            } else if (ten_dang_nhap == null)
+                    {alert('Canceled');}
+                    else alert("I don't know you");
+        </script>    
+</body>
+</html>
