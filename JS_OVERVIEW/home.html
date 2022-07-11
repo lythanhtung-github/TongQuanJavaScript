@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Overview</title>
+    </head>
+    <body>       
+        <!--
+            Các cách nhúng JS vào trong HTML
+            Cách 1 (inline): bổ sung vào sự kiện (event) của element
+            Cách 2 (internal): viết bên trong thẻ script
+            Cách 3 (external): viết bên trong file .js
+        -->
+        <!-- <button  onmouseover="this.innerHTML = new Date()"  
+                 onmouseout="this.innerHTML = 'Hover to show datetime'">
+           Hover to show datetime
+        </button>
+        <input type="text"
+            onfocus="this.style.border = '5px solid red';"
+            onblur="this.style.border = '1px solid black';"
+            >
+        <h1 onclick ="document.getElementsByTagName('span')[0].innerText='sssss'">Page</h1> -->
+
+        <label for="">Nhập mật khẩu: </label>
+        <input type="password" id="pw">
+        <button id="btnPW" onclick="showPassword()">Show password</button>
+
+        <!-- <script>
+            function showPassword() {
+                if(document.getElementById("pw").type == "password") {
+                    document.getElementById("pw").type = "text";
+                    document.getElementById("btnPW").innerText = "Hide password";
+            }
+            else {
+                    // document.getElementById("pw").type == "text" ;
+                    document.getElementById("pw").type = "password";
+                    document.getElementById("btnPW").innerText = "Show password";
+            }
+        
+        }
+        </script> -->
+        <script src="type.js" ></script>
+    </body>
+</html>
