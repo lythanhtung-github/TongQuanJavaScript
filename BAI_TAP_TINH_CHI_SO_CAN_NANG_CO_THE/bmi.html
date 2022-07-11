@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÍNH CHỈ SỐ CÂN NẶNG CƠ THỂ</title>
+</head>
+<body>
+    <table border = 1px>
+        <thead>
+            <th colspan="2" 
+            style="text-align: center; background-color: aqua;"
+            >TÍNH CHỈ SỐ CÂN NẶNG</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="can_nang">Nhập cân nặng (kg):</label>
+                </td>
+                <td>
+                    <input type="text" id="can_nang">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="chieu_cao">Nhập chiều cao (m):</label>
+                </td>
+                <td>
+                    <input type="text" id="chieu_cao">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button id="btn_KiemTra" onclick="Kiem_tra()" 
+                    style="height: 35px; width:60px; background-color: rgb(11, 230, 11);">Kiểm tra</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <p id="result" ></p></td> 
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script src="bmi.js"></script>
+</html>
