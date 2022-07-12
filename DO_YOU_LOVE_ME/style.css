@@ -1,0 +1,29 @@
+
+#ques{
+    color: rgb(230, 8, 45);
+    position: absolute;
+    left: 220px;
+    top: 175px;
+    width: auto;
+    height:210px;
+}
+#ans_yes{
+    position: absolute;
+    left: 285px;
+    top: 235px;
+    height: 300px;
+    width: 300px;
+}
+#ans_no{
+    position: absolute;
+    left: 400px;
+    top: 235px;
+    height: 300px;
+    width: 300px;
+}
+#btn_Y {
+    font-size:30px;
+}
+#btn_N {
+    font-size:30px;
+}
