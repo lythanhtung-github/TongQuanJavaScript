@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-fluid {
+	max-width: 940px;
+}
+
+.puzzles {
+	margin-top: 1em;
+	margin: auto;
+}
+
+img {
+	display: block;
+	margin: 0em;
+	padding: 0.2em;
+	box-shadow: 2px 3px 3px black;
+	width: 400px;
+	height: 90px;
+}

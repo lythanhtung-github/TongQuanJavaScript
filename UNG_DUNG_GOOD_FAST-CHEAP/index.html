@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" >
+    <title>Good - Fast - Cheap</title>
+</head>
+<body>
+    <label class="switch">
+        <input type="checkbox" id="g" onclick=switchGood() >
+        <span class="slider round good"></span>
+    </label>
+    <span>
+        <p><b>Good</b></p>
+    </span>
+    <br />
+    <label class="switch">
+        <input type="checkbox" id="c" onclick=switchCheap()>
+        <span class="slider round cheap"></span>
+    </label>
+    <span>
+        <p><b>Cheap</b></p>
+    </span>
+    <br />
+    <label class="switch">
+        <input type="checkbox" id="f" onclick=switchFast()>
+        <span class="slider round fast"></span>
+    </label>
+    <span>
+        <p><b>Fast</b></p>
+    </span>
+</body>
+<script src="main.js"></script>
+</html>

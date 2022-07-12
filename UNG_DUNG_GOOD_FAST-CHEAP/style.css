@@ -1,0 +1,63 @@
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin: 10px;
+        }
+
+        .switch input {
+            opacity: 0; /*Độ trong suốt của hình ảnh*/
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked+.good {
+            background-color: rgb(12, 209, 94);
+        }
+
+        input:checked+.cheap {
+            background-color: rgb(54, 16, 158);
+        }
+
+        input:checked+.fast {
+            background-color: rgb(255, 9, 9);
+        }
+
+        input:checked+.slider:before {
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%; /*bo góc tròn */
+        }
+
+        span p {
+            display: inline-block;
+        }
