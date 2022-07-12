@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính hoa hồng nhận được</title>
+</head>
+<body>
+</body>
+<script>
+    input_ds = prompt('Nhập doanh số bán hàng:');
+    doanhso = parseInt(input_ds);
+    let hoahong;
+    if (doanhso>300000000){
+        hoahong = 20*doanhso/100;
+    }
+    else if (doanhso>100000000){
+        hoahong = 10*doanhso/100;
+    }
+    else hoahong = 5*doanhso/100;
+    document.write("Hoa hồng bạn nhận được là: "+ hoahong)+ " VNĐ";
+</script>
+</html>

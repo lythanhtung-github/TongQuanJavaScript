@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp loại học sinh</title>
+</head>
+<body>
+    
+</body>
+<script>
+    dkt = prompt('Nhập điểm kiểm tra:');
+    let diem_kt = parseInt(dkt);
+    dgk = prompt('Nhập điểm thi giữa kỳ:');
+    let diem_gk = parseInt(dgk);
+    dck = prompt('Nhập điểm thi cuối kỳ:');
+    let diem_ck = parseInt(dck);
+    let diem_tb = (diem_kt + diem_gk * 2 + diem_ck * 3)/6 ;
+    if (diem_tb<3.5){
+        document.write("Học sinh kém");
+    }
+    else if(diem_tb<5){
+        document.write("Học sinh yếu");
+    }
+    else if(diem_tb<6.5){
+        document.write("Học sinh trung bình");
+    }
+    else if(diem_tb<7){
+        document.write("Học sinh khá");
+    }
+    else document.write("Học sinh giỏi");
+</script>
+</html>
