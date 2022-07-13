@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển m sang ft</title>
+</head>
+<body>
+    <label for="C">Nhập số mét (m):</label>
+    <input type="text" id="C"><br>
+    <button type="button" id="btn" onclick=Chuyen_Doi() >Chuyển sang ft</button><br><br>
+    <q id ='f'></q>
+</body>
+<script>
+    function Chuyen_Doi() {
+        c = document.getElementById("C").value;
+        let f = c*3.2808;
+        document.getElementById('f').innerHTML = f + " ft";
+    }
+</script>
+</html>

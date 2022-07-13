@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính lãi vay ngân hàng</title>
+    <style>
+        button{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <table border =1px>
+        <thead>
+            <th colspan="3">TÍNH LÃI VAY NGÂN HÀNG</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td >Nhập số tiền bạn muốn vay:</td>
+                <td>
+                    <input type="number" id="loan">
+                </td>
+                <td>VNĐ</td>
+            </tr>
+            <tr>
+                <td>Số tháng vay:</td>
+                <td>
+                    <input type="number" id="month">
+                </td>
+                <td>tháng</td>
+            </tr>
+            <tr>
+                <td>Lãi xuất:</td>
+                <td>
+                    <input type="number" id="interest">
+                </td>
+                <td>%/năm</td>
+            </tr>
+            <tr>
+                <td>Tiền lãi cần trả:</td>
+                <td>
+                    <input  readonly type="text" id="myInterest" style="font-weight: bold;">
+                </td>
+                <td>VNĐ</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align:center">
+                    <button type="button" id="btn_Calculate" onclick="calculate()">Tính</button>
+                    <button type="button" id="btn_Reset" onclick="reset()">Làm mới</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    function calculate() {
+        let month = document.getElementById("month").value;
+        let loan = document.getElementById("loan").value;
+        let interest = document.getElementById("interest").value;
+        let debt = loan / month;
+        let lai =0;
+        for (let i = 1;i <=month; i++){
+            lai = lai + (loan - debt *i)*interest/12;
+        }
+        document.getElementById("myInterest").value = lai;
+    }
+    function reset(){
+        document.getElementById("month").value = null;
+        document.getElementById("loan").value = null;
+        document.getElementById("interest").value = null;
+        document.getElementById("myInterest").value = null;
+    }
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải phương trình bậc 2 </title>
+</head>
+<body>
+    <h1>Giải phương trình bậc 2: ax<sup>2</sup> + bx + c = 0</h1>
+
+    <label for="thamsoA">Nhập giá trị a:</label>
+    <input type="text" id="thamsoA">
+    <label for="thamsoB">Nhập giá trị b:</label>
+    <input type="text" id="thamsoB">
+    <label for="thamsoC">Nhập giá trị c:</label>
+    <input type="text" id="thamsoC"><br><br>
+
+    <button type="button" id="btnGiai" onclick="giaiPT()">Giải PT</button><br><br>
+    <q id = "result"></q>
+</body>
+
+<script>
+    function giaiPT() {
+        let tsA = document.getElementById("thamsoA").value;
+        let tsB = document.getElementById("thamsoB").value;
+        let tsC = document.getElementById("thamsoC").value;
+        let result = "";
+        if (tsA == 0){
+            if (tsB == 0){
+                if (tsC == 0){
+                    document.getElementById("result").innerHTML = "Phương trình có vô số nghiệm";
+                }
+                else{
+                    document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
+                }
+            }
+            else{  
+                document.getElementById("result").innerHTML = "Phương trình có 1 nghiệm là: " + (-tsC/tsB);
+            }
+        }
+        else {
+            let dt = Math.pow(tsB, 2)- 4*tsA*tsC;
+            if (dt <0){
+                document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
+            }
+            else if (dt == 0){
+                document.getElementById("result").innerHTML = 
+                "Phương trình có nghiệm kép x<sub>1</sub> = x<sub>2</sub> = " + ((- tsB)/(2*tsA));
+            }
+            else {
+                document.getElementById("result").innerHTML = 
+                "Phương trình có 2 nghiệm phân biệt: <br> x<sub>1</sub> = " + (((- tsB)+(Math.sqrt(dt)))/(2*tsA)) + "<br>và<br>" + "x<sub>2</sub> = " + (((-tsB)-(Math.sqrt(dt)))/(2*tsA));
+            }
+        }
+    }
+
+</script>
+</html>

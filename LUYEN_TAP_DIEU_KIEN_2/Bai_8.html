@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra tuổi</title>
+</head>
+<body>
+    <label>Nhập số tuổi</label>
+    <input type="number" id="tuoi">
+    <button type="button" onclick="kiemTra()">Kiểm tra</button>
+</body>
+<script>
+    function kiemTra() {
+        let stuoi = document.getElementById("tuoi").value;
+        if (stuoi <0){
+            alert("Vui lòng nhập lại số tuổi");
+            document.getElementById("tuoi").value = null;
+        }
+        else if (stuoi <=120) {
+            alert("Số tuổi của bạn là: " + stuoi);
+        }
+        else {
+            alert("Vui lòng nhập lại số tuổi");
+            document.getElementById("tuoi").value = null;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải phương trình bậc 1</title>
+</head>
+<body>
+    <h1> Giải phương trình ax+b = 0</h1>
+    <label for="bienA">Nhập giá trị cho a</label>
+    <input type="text" id="bienA" ><br>
+    <label for="bienB">Nhập giá trị cho b</label>
+    <input type="text" id="bienB" ><br>
+    <button id="btn_Giai" onclick="giaiPt()">Giải PT</button>
+    <button id="btn_Reset" onclick="reset()">Reset</button>
+    <br>
+    <p id = "result" ></p>
+</body>
+<script> 
+    function giaiPt(){
+        let c = document.getElementById("bienA").value;
+        let d = document.getElementById("bienB").value;
+        if (c == 0){
+            if (d == 0){ 
+                document.getElementById('result').innerHTML = "Phương trình có vô số nghiệm";
+            }
+            else {  
+                document.getElementById('result').innerHTML ="Phương trình vô nghiệm";
+            }
+        }
+        else {
+            document.getElementById('result').innerHTML ="Nghiệm của phương trình là: " + (-d/c);
+        }
+    }
+    function reset() {
+        document.getElementById("bienA").value = null;
+        document.getElementById("bienB").value = null;
+    }
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển nhiệt độ</title>
+</head>
+<body>
+    <label for="C">Nhập số nhiệt độ (Độ C):</label>
+    <input type="text" id="C"><br>
+    <button type="button" id="btn" onclick=chuyenDoi() >Chuyển đổi sang độ F</button><br><br>
+    <q id =f></q>
+</body>
+<script>
+    function chuyenDoi() {
+        c = document.getElementById("C").value;
+        let f = c*9/5+32;
+        document.getElementById("f").innerHTML = f + " Độ F";
+    }
+</script>
+</html>

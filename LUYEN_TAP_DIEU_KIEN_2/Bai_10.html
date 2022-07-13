@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính hóa đơn tiền điện</title>
+</head>
+<body>
+    <table border = 1px>
+        <thead>
+            <th colspan="2">TÍNH HÓA ĐƠN TIỀN ĐIỆN</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nhập số kWh cũ:</td>
+                <td>
+                    <input type="number" id="kwhOld">
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập số kWh hiện tại:</td>
+                <td>
+                    <input type="number" id="kwhNew">
+                </td>
+            </tr>
+            <tr>
+                <td>Số kWh bạn đã dùng:</td>
+                <td>
+                    <input readonly type="text" id="kwhUse">
+                </td>
+            </tr>
+            <tr>
+                <td>Bậc:</td>
+                <td>
+                    <input readonly type="text" id="range">
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    <b>Thành tiền</b>
+                </td>
+                <td>
+                        <input readonly style="font-weight: bold;" type="text" id="result">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <button type="button" id="tinhTien" onclick="tinhTien();">Tính toán </button>  
+                    <button type="button" id="reset" onclick="reset();">Nhập lại </button>  
+                </td>
+            </tr>
+        </tbody>
+    </table><br>
+    <table border = 1px>
+        <thead>
+            <th>Bậc</th>
+            <th>Số kWh</th>
+            <th>Giá (VNĐ)</th>
+        </thead> 
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>0-50</td>
+                <td>1.484</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>51-100</td>
+                <td>1.533</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>101-200</td>
+                <td>1.786</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>201-300</td>
+                <td>2.242</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>301-400</td>
+                <td>2.503</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>401 trở lên</td>
+                <td>2.587</td>
+            </tr>
+        </tbody>   
+    </table>
+</body>
+<script>
+    function tinhTien(){
+        let kwhO = document.getElementById("kwhOld").value;
+        let kwhN = document.getElementById("kwhNew").value;
+        let kwhU = kwhN - kwhO;
+        let result = 0;
+        let range = "";
+        if (kwhU>400){
+            result = kwhU * 2.587;
+            range = "Bậc 6";
+        }
+        else if (kwhU>300){
+            result = kwhU * 2.503;
+            range = "Bậc 5";
+        }
+        else if (kwhU>200){
+            result = kwhU * 2.242;
+            range = "Bậc 4";
+        }
+        else if (kwhU>100){
+            result = kwhU * 1.786;
+            range = "Bậc 3";
+        }else if (kwhU>50){
+            result = kwhU * 1.533;
+            range = "Bậc 2";
+        }else{
+            result = kwhU * 1.484;
+            range = "Bậc 1";
+        }
+        document.getElementById("kwhUse").value = kwhU;
+        document.getElementById("range").value = range;
+        document.getElementById("result").value =result + " VNĐ";
+    }
+    function reset(){
+        document.getElementById("kwhOld").value = null;
+        document.getElementById("kwhNew").value = null;
+        document.getElementById("kwhUse").value = null;
+        document.getElementById("range").value = null;
+        document.getElementById("result").value = null;
+    }
+
+</script>
+</html>

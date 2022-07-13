@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra 3 cạnh của 1 tam giác</title>
+    <style>
+    </style>
+</head>
+<body>
+    <table border = 1px>
+        <tr>
+            <td>Nhập a:</td>
+            <td>
+                <input type="number" id = "canhA">
+            </td>
+        </tr>
+        <tr>
+            <td>Nhập b:</td>
+            <td>
+                <input type="number" id = "canhB">
+            </td>
+        </tr>
+        <tr>
+            <td>Nhập c:</td>
+            <td>
+                <input type="number" id = "canhC">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>Kết quả:</td>
+            <td>
+                <input readonly type="text" id = "result">
+            </td>
+        </tr>
+        <tr>
+            <td colspan ="2" style = "text-align: center;">
+                <button type="button" id = "btn_KiemTra" onclick=kiemTra()>Kiểm tra</button>
+                <button type="button" id = "btn_Reset" onclick=reset()>Reset</button>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    function reset() {
+        document.getElementById("canhA").value = null;
+        document.getElementById("canhB").value = null;
+        document.getElementById("canhC").value = null;
+        document.getElementById("result").value = null;
+    }
+    function kiemTra() {
+        let a = document.getElementById("canhA").value;
+        let b = document.getElementById("canhB").value;
+        let c = document.getElementById("canhC").value;
+        if (a>0 && b>0 && c>0 )
+        {
+            if (((a+b)>c) && ((c+b)>a) && ((a+c)>b) ){
+                document.getElementById("result").value= "3 cạnh của 1 tam giác";
+            }else {
+            alert("Vui lòng nhập lại");
+            reset();
+        }
+        }
+        else {
+            alert("Vui lòng nhập lại");
+            reset();
+        }
+    }
+</script>
+</html>

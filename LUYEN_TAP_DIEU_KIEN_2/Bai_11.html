@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <table border =1px>
+        <thead>
+            <th colspan="2">TÍNH THUẾ THU NHẬP CÁ NHÂN</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nhập thu nhập của bạn:</td>
+                <td>
+                <input type="number" id = "income" > <!--placeholder="VNĐ"-->
+                </td>
+                <td>VNĐ</td>
+            </tr>
+            <tr>
+                <td>Thuế phải nộp:</td>
+                <td>
+                    <input readonly type="text" id= "incomeTax" style="font-weight: bold;">
+                </td>
+                <td>VNĐ</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align:center;">
+                    <button type="button" id= "btn_Calculate" onclick="calculate()">Tính</button>
+                    <button type="button" id= "btn_Reset" onclick="reset()">Reset</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <table border =1px> <!--Bảng thống kê thuế thu nhập-->
+        <thead>
+            <th>Bậc</th>
+            <th>Thu nhập tính thuế(TNTT)/tháng</th>
+            <th>Thuế suất</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>5 triệu trở xuống</td>
+                <td>5%</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trên 5 triệu đến 10 triệu</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Trên 10 triệu đến 18 triệu</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Trên 18 triệu đến 32 triệu</td>
+                <td>20%</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Trên 32 triệu đến 52 triệu</td>
+                <td>25%</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Trên 52 triệu đến 80 triệu</td>
+                <td>30%</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Trên 80 triệu</td>
+                <td>35%</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    function calculate(){
+        let income = document.getElementById('income').value;
+        let incomeTax = 0;
+        if (income>80000000){
+            incomeTax = income * 35 /100;
+        }
+        else if (income>52000000){
+            incomeTax = income * 30 /100;
+        }
+        else if (income>32000000){
+            incomeTax = income * 25 /100;
+        }
+        else if (income>18000000){
+            incomeTax = income * 20 /100;
+        }
+        else if (income>10000000){
+            incomeTax = income * 15 /100;
+        }else if (income>50000000){
+            incomeTax = income * 10 /100;
+        }else{
+            incomeTax = income * 5 /100;
+        }
+        document.getElementById("incomeTax").value = incomeTax;
+    }
+    function reset(){
+        document.getElementById('income').value = null;
+        document.getElementById("incomeTax").value = null;
+    }
+</script>
+</html>

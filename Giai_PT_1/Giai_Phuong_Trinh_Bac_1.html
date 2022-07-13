@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải phương trình bậc 1</title>
+</head>
+<body>
+    <table border =1px>
+        <thead>
+            <th colspan="2">Giải phương trình ax+b = 0</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <label for="bienA">Nhập giá trị cho a</label></td>
+                <td><input type="number" id="bienA" ></td>
+            </tr>
+            <tr>
+                <td><label for="bienB">Nhập giá trị cho b</label></td>
+                <td><input type="number" id="bienB" ><br></td>
+            </tr>
+            <tr>
+                <td><label for="result">Kết quả</label></td>
+                <td><p id = "result" ></p></td>
+            </tr>
+            <tr style="text-align:center">
+                <td colspan="2" ><button id="btn_Giai" onclick="giaiPt()">Giải PT</button>
+                    <button id="btn_Reset" onclick="reset()">Reset</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script> 
+    function giaiPt(){
+        let c = document.getElementById("bienA").value;
+        let d = document.getElementById("bienB").value;
+        if (c == 0){
+            if (d == 0){ 
+                document.getElementById('result').innerHTML = "Phương trình có vô số nghiệm";
+            }
+            else {  
+                document.getElementById('result').innerHTML ="Phương trình vô nghiệm";
+            }
+        }
+        else {
+            document.getElementById('result').innerHTML ="Nghiệm của phương trình là: " + (-d/c);
+        }
+    }
+    function reset() {
+        document.getElementById("bienA").value = null;
+        document.getElementById("bienB").value = null;
+    }
+</script>
+</html>
