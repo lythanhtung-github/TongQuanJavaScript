@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiện thị các số nguyên tố</title>
+</head>
+<body>
+    <h3 id = 'result'></h3>
+</body>
+<script>
+    let count = 0; 
+    let countPrime = 0;
+    let number = parseInt(prompt("Enter your number: "));
+    document.getElementById("result").innerHTML ="Hiển thị "+ number+ " số nguyên tố đầu tiên";
+    for (let N = 2; N < 1000; N++) 
+    {
+        if (countPrime < number)
+        {
+            for(let i = 1; i <= N; i++)
+            {
+                if (N % i == 0)
+                {
+                    count = count + 1;
+                }   
+            }
+            if (count == 2)
+                {
+                    document.write( N +'<br>');
+                    countPrime = countPrime + 1;
+                }
+                count = 0;
+        }
+        else 
+        {
+            break;
+        }
+    }
+    
+    // function checkNT(number) {
+    //         let count = 0; // đếm số ước của số đang xét; 
+    //         let countSNT = 0; // đếm xem đã đủ số lượng số nguyên tố cần in ra chưa;
+    //         for (let i = 2; i < 1000; i++) { // 2,3,4,5,6,7,8,....,1000
+    //             if (countSNT < number) { // Nếu số lượng SNT in ra < so với số lượng yêu cầu
+    //                 for (let j = 1; j <= i; j++) {
+    //                     if (i % j == 0) {
+    //                         count += 1;
+    //                     }
+    //                 }
+    //                 if (count == 2) {
+    //                     document.write(i + "<br>"); //4
+    //                     countSNT += 1; //1
+    //                 }
+    //                 count = 0;
+    //             } else {
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     let number = parseInt(prompt("Nhập n số nguyên tố đầu tiên: ")); //10
+    //     checkNT(number);
+</script>
+</html>
