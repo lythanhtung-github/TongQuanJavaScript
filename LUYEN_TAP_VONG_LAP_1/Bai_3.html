@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dãy Fibonacci</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = 1;
+    let b = 1;
+    let c, i =0;
+    while(i<7){
+        document.write(a + "<br>");
+        document.write(b + "<br>");
+        c = a + b;
+        document.write(c + "<br>");
+        a = b + c;
+        b = c + a;
+        i++;
+    }
+</script>
+</html>

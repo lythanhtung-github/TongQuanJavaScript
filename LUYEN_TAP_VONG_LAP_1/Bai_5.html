@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng 20 số Fibonacci đầu tiên</title>
+  </head>
+  <body>
+    
+  </body>
+  <script>
+
+let a = 0;
+let b = 1;
+let c = 1;
+let sum = 0;
+let count = 0;
+let numb = prompt('Enter your number: ');
+for (let i = 0; i <(numb/3); i++) {
+    a = b+c;   
+    b = c+a;
+    c = a+b;
+    sum = a + b + c + sum;
+}
+document.write(sum);
+  </script>
+  </html>

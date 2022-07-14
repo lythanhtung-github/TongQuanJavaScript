@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game đoán số</title>
+</head>
+<body>
+    <button type="button" onclick="whatNumber();">Chơi</button>
+    <button type="button" onclick="whatNumber();">Chơi lại</button>
+</body>
+<script>
+    function whatNumber(){
+    let count = 0;
+    let num1 = prompt("Nhập số lớn nhất trong khoảng cách mà bạn muốn đoán:"); //Số lớn nhất trong khoảng cách muốn đoán
+    let ran = Math.floor(Math.random() * num1);
+    let num2 = prompt("Bạn có thể đoán số trong khoảng cách từ 0 đến "+ num1+ "."+" Nhập số bạn muốn đoán:"); //Số người nhập vào để đoán
+    
+    while (ran != num2){
+        count = count +1;
+        if (count == 3){
+            alert('Bạn hết lượt chơi'); 
+            break;
+            }
+        if (num2>ran)
+        {
+            alert('Số bạn đoán lớn hơn số cần đoán');
+            num2 = prompt("Bạn có thể đoán số trong khoảng cách từ 0 đến "+ num1+ "."+" Nhập số bạn muốn đoán:");
+        }
+        else
+        {
+            alert('Số bạn đoán nhỏ hơn số cần đoán');
+            num2 = prompt("Bạn có thể đoán số trong khoảng cách từ 0 đến "+ num1+ "."+" Nhập số bạn muốn đoán:"); 
+        }
+    }
+    if (ran == num2) 
+    {
+        alert('Bạn đã chiến thắng');
+    }
+    }
+
+    
+</script>
+</html>

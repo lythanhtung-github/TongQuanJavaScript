@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dãy Fibonacci</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = 1;
+    let b = 1;
+    let c, i =0;
+    let count = 0;
+    while(i<1000){
+        c = a + b;
+        if (c %5 == 0){
+            document.write(c + "<br>");
+            count+=1;
+        }
+        a = b + c;
+        if (a %5 == 0){
+            document.write(a + "<br>");
+            count+=1;
+        }
+        b = c + a;
+        if (b %5 == 0){
+            document.write(b + "<br>");
+            count+=1;
+        }
+        if (count ==5){break;}
+        i++;
+    }
+</script>
+</html>

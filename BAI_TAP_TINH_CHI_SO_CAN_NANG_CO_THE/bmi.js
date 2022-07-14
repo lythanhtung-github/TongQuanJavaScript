@@ -15,6 +15,6 @@ function Kiem_tra() {
     }
     else {
         result = "Chỉ số bmi của bạn là: "+ bmi + " ứng với <b>Obese (Béo phì)</b>";
-    }
+    } 
     document.getElementById("result").innerHTML= result;
 }
