@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Caro Game Simple</h3>
+    <div id="result"></div>
+    <button type="button" onclick="changeValue();">Change Value</button>
+</body>
+<script>
+    let data = "";
+    let board = [];
+    for (let i = 0; i < 5; i++) {
+        board[i] = new Array(0, 0, 0, 0, 0);
+    }
+    for (let i = 0; i < 5; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+        document.getElementById("result").innerHTML = data + "<br><br>";
+    }
+
+        function changeValue() {
+            let x = prompt("Nhập tọa độ X:");
+            let y = prompt("Nhập tọa độ Y:");
+            data = "";
+            board[x-1][y-1]="x";
+            for (let i = 0; i < 5; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+            document.getElementById("result").innerHTML = data + "<br><br>";
+            }
+    }
+</script>
+</html>
