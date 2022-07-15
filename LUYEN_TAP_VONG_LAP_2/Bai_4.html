@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In hình chữ nhật</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    let d = Number(prompt("Nhập chiều dài của hình chữ nhật:"));
+    let c = Number(prompt("Nhập chiều cao của hình chữ nhật:"));
+    function printRectangle(w,h){
+        let result ="";
+
+        for (let i=0; i<=h;i++) 
+        {
+            for (let j=0; j<=w;j++) 
+            {
+                if (i ==0 || i ==h){
+                    result = result +"*";   
+                }
+                else if (j == 0 || j == w)
+                {
+                    result = result +"*";
+                }
+                else 
+                {
+                    result = result + '&nbsp&nbsp';
+                }
+            }
+            result += '<br/>'
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+    printRectangle(d,c);
+
+</script>
+</html>
