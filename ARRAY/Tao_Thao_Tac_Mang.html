@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo - Thao tác với mảng</title>
+</head>
+<hr>
+    <h1>Thêm phần tử và in mảng</h1>
+    <input type="text" id="elementArray">
+    <button type="button" onclick="addArray()">Add</button>
+    <button type="button" onclick="displayArray()">Display</button>
+    <hr></hr>
+    <div id = "divElement"></div>
+    <div id ="result"></div>
+</body>
+<script>
+    let x = 0;
+    let array= Array();
+    function addArray() {
+        array[x] = document.getElementById("elementArray").value;
+        alert("Bạn vừa thêm "+ array[x] +" vào vị trí "+ x +" của mảng ");
+        x++;
+    }
+    function displayArray(){
+        let inArray="";
+        for (let i=0; i<array.length; i++){
+            inArray = inArray +"Giá trị thứ "+ i +" của mảng là: "+array[i] +"<br>";
+        }
+        document.getElementById("result").innerHTML = inArray;  
+    }
+</script>
+</html>
