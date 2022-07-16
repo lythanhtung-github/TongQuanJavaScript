@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng hàm có sẵn trong mảng - Bài 1 - 2 - 3
+    </title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //BÀI 1
+    myColor = ["Red", "Green", "White", "Black"];
+    document.write(myColor.toString() + "<Br>"); //Chuyển sang kiểu chuỗi
+    document.write(myColor.join() + "<Br>");
+    document.write(myColor.join("+") + "<Br>");
+    document.write(myColor.join(" and ") + "<Br>");
+
+    //BÀI 2 
+    var num = prompt();
+    var str = num.toString();
+    var result = [str[0]];
+
+    for (var x = 1; x < str.length; x++) {
+        if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+            result.push('-', str[x]); //Thêm ký tự -
+        }
+        else {
+            result.push(str[x]);
+        }
+        document.write(result.join(''));
+    }
+
+    // BÀI 3
+    var a = prompt(); // Chuỗi được người dùng nhập vào
+    var str3 = a.toString(); // Chuyển sang kiểu dữ liệu chuỗi
+    const UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // Hằng số
+    const LOWER = "abcdefghijklmnopqrstuvwxyz";
+    const result3 = [];
+
+    for (let i = 0; i < str3.length; i++) {
+    if (UPPER.includes(str3[i])){
+        result3.push(str3[i].toLocaleLowerCase());
+    }
+    else if (LOWER.includes(str3[i])){
+        result3.push(str3[i].toLocaleUpperCase());
+    }
+    else result3.push(str3[i]);
+    }
+    document.write(result3.join (""));
+</script>
+
+</html>
