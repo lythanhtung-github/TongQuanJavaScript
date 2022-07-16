@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary - Simple</title>
+</head>
+
+<body>
+
+    <input type="text" id="word">
+    <button type="button" onclick="dictionary()">Dịch</button><br>
+    <p id="result"></p>
+
+    <br><br><br><br><br><br>
+    <label>Danh sách các từ hiện có: banana, apple, orange, cherry, apricot, avocado, coconut </label>
+</body>
+<script>
+    function dictionary() {
+        let str = document.getElementById("word").value; //từ tiếng anh người dùng nhập vào
+        var arrayEng = ["banana", "apple", "orange", "cherry", "apricot", "avocado", "coconut"];
+        var arrayVie = ["trái chuối", "quả táo", "quả cam", "anh đào", " quả mơ", "trái bơ", "trái dừa"];
+        let result = "";
+
+        for (let i = 0; i < arrayEng.length; i++) {
+            if (str == arrayEng[i]) {
+                result = arrayVie[i];
+            }
+            else {
+                result = str +" hiện tại chưa có trong từ điển. Vui lòng nhập lại!";
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+
+</html>
