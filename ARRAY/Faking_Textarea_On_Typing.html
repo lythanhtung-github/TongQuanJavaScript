@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faking Textarea on Typing</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        div{
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        h3{
+            font-size: 30px;
+            text-align: center;
+        }
+        #txtA{
+            font-size: 20px;
+            height: 300px;
+            width: 450px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Type anthing slowly</h3>
+        <textarea id="txtA" onkeydown="changeValue()"></textarea>
+    </div>
+</body>
+<script>
+        var result = "";
+        var arr = new Array();
+        arr[0] = 'Y';
+        arr[1] = 'O';
+        arr[2] = 'U';
+        arr[3] = ' ';
+        arr[4] = 'A';
+        arr[5] = 'R';
+        arr[6] = 'E';
+        arr[7] = ' ';
+        arr[8] = 'C';
+        arr[9] = 'R';
+        arr[10] = 'A';
+        arr[11] = 'Z';
+        arr[12] = 'Y';
+        arr[13] = ' ';
+        arr[14] = 'F';
+        arr[15] = 'O';
+        arr[16] = 'R';
+        arr[17] = ' ';
+        arr[18] = 'L';
+        arr[19] = 'O';
+        arr[20] = 'V';
+        arr[21] = 'E';
+        arr[22] = '!';
+        arr[23] = '!';
+        arr[24] = '!';
+        arr[25] = ' ';
+        arr[26] = '(';
+        arr[27] = '^';
+        arr[28] = '_';
+        arr[29] = '^';
+        arr[30] = ')';
+        function changeValue() {
+            let txtA = document.getElementById('txtA').value; 
+            if (txtA.length > 0)
+            {
+                for(var i = 0; i < txtA.length; i++)
+                {
+                    result = result + arr[i];
+                }
+                if (i==30){
+                    document.getElementById('txtA').value="";
+                    result="";
+                }
+            }
+            document.getElementById('txtA').value=result;
+            result="";
+            setTimeout("changeValue()", 1);
+        }
+</script>
+</html>
