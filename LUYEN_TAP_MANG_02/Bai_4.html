@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Count number of words in a string</title>
+
+</head>
+
+<body>
+    <textarea id="InputText" cols="30" rows="4"></textarea>
+    <br>
+    <input type="button" name="Convert" value="No. of Words" onClick="countWords();">
+    <input id="result" type="text" value="" size="6">
+</body>
+<script>
+    function countWords() {
+        str1 = document.getElementById("InputText").value;
+        if (str1 == "") {
+            alert("Please enter a word");
+        } else {
+            str1 = str1.replace(/(^\s*)|(\s*$)/gi, "");//Loại trừ khoảng trắng bắt đầu và kết thúc
+            str1 = str1.replace(/[ ]{2,}/gi, " "); //Chuyển 2 hay nhiều khoảng trắng thành 1 
+            str1 = str1.replace(/\n /, "\n"); // Loại trừ dòng mới với khoảng cách
+            document.getElementById("result").value = str1.split(' ').length;
+        }
+    }
+</script>
+
+</html>
