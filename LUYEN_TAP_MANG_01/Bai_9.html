@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sắp xếp mảng</title>
+</head>
+<h3> SẮP XẾP MẢNG</h3>
+<label for="txtElementArrayA">Nhập phần tử cho mảng A:</label>
+<input type="number" id="txtElementArrayA">
+<button type="button" onclick="addArrayA()">Thêm A</button><br><br>
+
+<label for="txtElementArrayB">Nhập phần tử cho mảng B:</label>
+<input type="number" id="txtElementArrayB">
+<button type="button" onclick="addArrayB()">Thêm B</button><br><br>
+
+
+<button type="button" onclick="concatArray()">Nối mảng</button><br><br>
+
+<span id="ArrayA"></span><br><br>
+<span id="ArrayB"></span><br><br>
+
+<span id="result"></span><br><br>
+
+</body>
+<script>
+    var ArrA = new Array(); // Mảng A
+    var ArrB = new Array(); // Mảng B
+    var ArrC = new Array(); // Mảng C
+
+    function addArrayA() { // Thêm phần tử cho mảng
+        let txt = document.getElementById("txtElementArrayA").value;
+        if (txt == "") {
+            alert("Không thể thêm phần tử rỗng, vui lòng nhập ký tự");
+        }
+        else {
+            ArrA.push(txt); // Thêm phần tử txt vào cuối mảng
+        }
+
+        document.getElementById("ArrayA").innerHTML = "Mảng A là: " + ArrA.join(", ");
+    }
+
+    function addArrayB() { // Thêm phần tử cho mảng
+        let txt = document.getElementById("txtElementArrayB").value;
+        if (txt == "") {
+            alert("Không thể thêm phần tử rỗng, vui lòng nhập ký tự");
+        }
+        else {
+            ArrB.push(txt); // Thêm phần tử txt vào cuối mảng
+        }
+
+        document.getElementById("ArrayB").innerHTML = "Mảng B là: " + ArrB.join(", ");
+    }
+    function concatArray() {
+        ArrC= ArrA.concat(ArrB);
+        document.getElementById("result").innerHTML = "Mảng sau khi nối: "+ ArrC.join(", ");
+    }
+
+   
+</script>
+
+</html>
