@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+    <span for = "number">Số:</span>
+    <input type="number" id="number" oninput="checkPrime()">
+    <span id = "result"></span>
+</body>
+<script>
+    
+    function checkPrime(number){
+        if(number <= 0 ){
+            flag = false;
+            return flag;
+        }
+        else
+        {
+            for (var i = 2; i < number; i++)
+            {
+                if (number % 2 == 0) 
+                {
+                    flag = false;
+                    return flag;
+                }
+                else 
+                {
+                    flag = true;
+                    return flag;
+                }
+
+            }
+        }
+    }
+    let num = Number(document.getElementById("number").value);
+
+    let result = checkPrime(num);
+
+</script>
+</html>

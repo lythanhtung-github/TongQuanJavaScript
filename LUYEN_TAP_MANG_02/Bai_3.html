@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đảo ngược mảng</title>
+    <title>Đếm số ký tự số trong mảng</title>
 </head>
 <label for="txtElementArray">Nhập mảng:</label>
 <input type="text" id="txtElementArray">
 <button type="button" onclick="addArray()">Thêm</button>
-<button type="button" onclick="reverseArray()">Đảo ngược mảng</button><br><br>
+<button type="button" onclick="countNum()">Kết quả</button><br><br>
 <span id="Array"></span><br><br>
-<span id="reverseArray"></span>
+<span id="result"></span>
 </body>
 <script>
     var Arr = new Array(); // Mảng
-    var reverseArr = new Array(); // Mảng đảo ngược
-
+    let count = 0;
     function addArray() { // Thêm phần tử cho mảng
         let txt = document.getElementById("txtElementArray").value;
         if (txt == "") {
@@ -29,11 +28,14 @@
 
         document.getElementById("Array").innerHTML = "Mảng là: " + Arr.join(", ");
     }
-    function reverseArray() { //Đảo ngược mảng
-        for (var j = Arr.length - 1; j >= 0; j--) {
-            reverseArr.push(Arr[j]);
+
+    function countNum() {
+        for (let i = 0; i < Arr.length; i++) {
+            if (parseInt(Arr[i]) != NaN) {
+                count = count + 1;
+            }
         }
-        document.getElementById("reverseArray").innerHTML = "Mảng đảo ngược là: " + reverseArr.join(", ");
+        document.getElementById("result").innerHTML = "Số ký tự số trong mảng là: " + count;
     }
 
 </script>
