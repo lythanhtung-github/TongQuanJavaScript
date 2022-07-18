@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính bình phương 1 số</title>
+</head>
+<body>
+    <span>Square of</span>
+    <input type="number" id="num" oninput="calculate()">
+    <span> is:</span>
+    <span id="result"></span>
+</body>
+<script>
+    function calculate() {
+        var num = document.getElementById("num").value;
+        var result = square(num);
+        document.getElementById("result").innerHTML = result;
+    }
+    function square(number){
+        return number*number;
+    }
+</script>
+</html>
