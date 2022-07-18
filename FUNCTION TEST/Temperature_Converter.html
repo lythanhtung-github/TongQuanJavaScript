@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi nhiệt độ</title>
+    <style>
+        *{font-size: 20px;}
+    </style>
+</head>
+<body>
+    <label for="temperatureF">Fahrenheit:</label>
+    <input type="number" id="temperatureF" oninput="temperatureConverter()"><br>
+    <label for="temperatureC">Celcius:</label>
+    <span id="result"></span>
+</body>
+<script>
+    function temperatureConverter(){
+        let tempF = Number(document.getElementById("temperatureF").value);
+        let tempC = (tempF - 32)/1.8;
+        document.getElementById("result").innerHTML = tempC;
+    }
+</script>
+</html>
