@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>In hình trái tim</title>
 </head>
+
 <body>
-    
+
 </body>
+<script>
+    for (var row = 0; row <= 5; row++) {
+        for (var col = 0; col <= 6; col++) {
+            if (((col % 3 != 0) && (row == 0)) || ((col % 3 == 0) && (row == 1))){
+                document.write("* &nbsp");
+            }
+            else if (row - col == 2 || row + col == 8) {
+                document.write("* &nbsp");
+            }
+            else {
+                document.write("&nbsp &nbsp");
+            }
+        }
+        document.write("<br>");
+    }
+
+</script>
+
 </html>
