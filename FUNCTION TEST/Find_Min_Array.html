@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị nhỏ nhất của mảng</title>
+</head>
+<body>
+    <p id="result1"></p><br>
+    <p id="result2"></p><br>
+    <p id="result3"></p><br>
+    <p id="result4"></p>
+</body>
+<script>
+    function findMinArray(arr) {
+        if (arr.length == 0) return -1;
+        let min = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (min>arr[1]){
+                min = arr[1];
+            }
+        }
+        return min;
+    }  
+    let arr1 =[3, 5, 1, 8, -3, 7, 8];
+    let arr2= [7, 12, 6, 9, 20, 56, 89];
+    let arr3= [];
+    let arr4= [0, 0, 0, 0, 0, 0];
+
+    let min1 = findMinArray(arr1);
+    let min2 = findMinArray(arr2);
+    let min3 = findMinArray(arr3);
+    let min4 = findMinArray(arr4);
+
+    document.getElementById("result1").innerHTML = min1;  
+    document.getElementById("result2").innerHTML = min2;
+    document.getElementById("result3").innerHTML = min3;  
+    document.getElementById("result4").innerHTML = min4;
+</script>
+</html>
