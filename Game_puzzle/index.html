@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game puzzle</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Puzze game</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="puzzles">
-          <img id="img1" src="" alt="" onclick="swap_img(1)"/>
-          <img id="img2" src="" alt="" onclick="swap_img(2)"/>
-          <img id="img3" src="" alt="" onclick="swap_img(3)"/>
-          <img id="img4" src="" alt="" onclick="swap_img(4)"/>
-          <img id="img5" src="" alt="" onclick="swap_img(5)"/>
-        </div>
+    <div class="container">
+        <img id="img1" src="" alt="" onclick="imageClick(1)">
+        <img id="img2" src="" alt="" onclick="imageClick(2)">
+        <img id="img3" src="" alt="" onclick="imageClick(3)">
+        <img id="img4" src="" alt="" onclick="imageClick(4)">
+        <img id="img5" src="" alt="" onclick="imageClick(5)">
+        <p id="result"></p>
     </div>
-    <script src="js/script.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
-
-</html>
+</html> 

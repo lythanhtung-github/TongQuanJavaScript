@@ -1,0 +1,35 @@
+#ckb-agree:checked{
+    transform: scale(2);
+}
+input[type="checkbox"]:focus{
+    border:none;
+
+    border:1px solid red;
+}
+button{
+    padding: 7px 15px;
+}
+button:hover{
+    background-color: blue;
+    color:azure;
+}
+div{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: yellowgreen;
+}
+div:hover{
+    border-radius: 50%;
+    background-color: orange;
+    cursor: wait; /*con trỏ chuột thành wait */
+}
+p::first-letter{
+    font-size:50px;
+    font-weight: bolder;
+    color:orange;
+    margin-right: 2px;
+}
+p::first-line{
+    color:aqua;
+}

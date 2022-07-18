@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 15px !important;
+            text-align: center;
+        }
+        #div1, span, p{
+            width:200px;
+            height: 200px;
+            background-image:linear-gradient(to right bottom, yellow, orange, red);
+            border-radius: 50%;
+            border:2px solid orange;
+        }
+        .classDiv1{
+            font-size: 20px;
+            width:100px;
+            height: 100px;
+            background-image:linear-gradient(to right bottom, yellow, orange, red);
+            border-radius: 50%;
+            border:2px solid orange;
+            color:brown;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        Có 3 cách nhúng (embed) vào HTML
+        1. inline style: viết thông qua thuộc tính style của element
+        2. internal style: viết trong thẻ style, thẻ này đặt trong thẻ head
+        3. external style: viết trong file có phần mở rộng .css, sử dụng thẻ link
+    -->
+    <!-- <div style= "width:200px;
+                height: 200px;
+                background-image:linear-gradient(to right bottom, yellow, orange, red);
+                border-top-left-radius: 20%;
+                border-bottom-right-radius: 20% ;
+                border:2px solid orange;"></div> -->
+    <div id="div1" class="" >CodeGym</div>
+    <div id="" class="classDiv1">CodeGym</div>
+    <div id="" class="">CodeGym</div>
+    <div id="" class="classDiv1">CodeGym</div>
+    <div id="" class="classDiv1">CodeGym</div>
+    <div id="" class="">CodeGym</div>
+    <div id="" class="">CodeGym</div>
+    <div id="" class="">CodeGym</div>
+    <span>CodeGym Huế</span>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, aliquid sequi laborum totam nostrum odit voluptatibus. Et porro minima illo vitae laboriosam. Recusandae commodi, officia alias maxime at nemo? Vitae.
+    </p>
+
+</body>
+
+</html>
