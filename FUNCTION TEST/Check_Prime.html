@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiểm tra số nguyên tố</title>
 </head>
+
 <body>
-    <span for = "number">Số:</span>
-    <input type="number" id="number" oninput="checkPrime()">
-    <span id = "result"></span>
+    <span for="number">Số:</span>
+    <input type="number" id="number" oninput="check()">
+    <span id="result"></span>
 </body>
 <script>
-    
-    function checkPrime(number){
-        if(number <= 0 ){
-            flag = false;
-            return flag;
-        }
-        else
-        {
-            for (var i = 2; i < number; i++)
-            {
-                if (number % 2 == 0) 
-                {
-                    flag = false;
-                    return flag;
-                }
-                else 
-                {
-                    flag = true;
-                    return flag;
-                }
 
+    function check() {
+        let num = Number(document.getElementById("number").value);
+        checkPrime(num);
+    }
+
+    function checkPrime(n) {
+        var flag = true;
+        if (n < 2) {
+            flag = false;
+        }
+        else if (n == 2) {
+            flag = true;
+        }
+        else if (n % 2 == 0) {
+            flag = false;
+        }
+        else {
+            for (var i = 3; i < Math.sqrt(n); i += 2) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
             }
         }
+        if (flag == true) {
+            document.getElementById("result").innerHTML = " là số nguyên tố";
+        }
+        else {
+            document.getElementById("result").innerHTML = " không phải là số nguyên tố";
+        }
     }
-    let num = Number(document.getElementById("number").value);
-
-    let result = checkPrime(num);
 
 </script>
+
 </html>
