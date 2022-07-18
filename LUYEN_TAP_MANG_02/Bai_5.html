@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So sánh 2 chuỗi</title>
+</head>
+<body>
+    <span for="txt_Chuoi1">Nhập chuỗi 1</span>
+    <input type="text" id="txt_Chuoi1"><br><br>
+    
+    <span for="txt_Chuoi2">Nhập chuỗi 2</span>
+    <input type="text" id="txt_Chuoi2"><br><br>
+
+    <button type="button" onclick = "compare()">So sánh</button><br><br>
+
+    <span id = "result"></span>
+</body>
+<script>
+    function compare() {
+        let chain1 = document.getElementById("txt_Chuoi1").value;
+        let chain2 = document.getElementById("txt_Chuoi2").value;
+
+        if (chain1 === chain2)
+        {
+            document.getElementById("result").innerHTML = "Hai chuỗi giống nhau";
+        }
+        else
+        {
+            document.getElementById("result").innerHTML = "Hai chuỗi khác nhau";
+        }
+    }
+</script>
+</html>
