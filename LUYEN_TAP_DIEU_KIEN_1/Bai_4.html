@@ -14,12 +14,8 @@
     let b = prompt("Nhập giá trị cho số thứ hai:");
     let c = prompt("Nhập giá trị cho số thứ ba:");
     let max = a;
-    if(b>max){
-        max = b;
-    }
-    else if(c>max){
-        max = c;
-    }
-    document.write("Giá trị lớn nhất là: "+max);
+    if(b>max) max = b;
+        else if(c>max) max = c;
+    document.write(`Giá trị lớn nhất là: ${max}`);
 </script>
 </html>
