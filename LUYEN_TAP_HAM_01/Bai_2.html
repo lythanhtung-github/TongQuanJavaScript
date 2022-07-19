@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <input type="number" id="txtNum">
+    <button type="button" onclick="printResult()">Kết quả</button>
+    <p id="result"></p>
+</body>
+<script>
+    function calculateResult(a) {
+        a = a + 1;
+        return (a);
+    }
+    function printResult() {
+        let num = Number(document.getElementById("txtNum").value);
+        num = calculateResult(num);
+        document.getElementById("result").innerHTML = num;
+    }
+</script>
+
+</html>
