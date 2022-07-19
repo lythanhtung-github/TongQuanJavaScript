@@ -14,11 +14,11 @@
         let num = a;
         a = b;
         b = num;
-        return ("Kết quả: " + a + ", "+b);
+        return (`Kết quả: ${a}, ${b}`);
     }
 
-    let a = Number(prompt("Nhập a: "));
-    let b = Number(prompt("Nhập b: "));
+    let a = prompt("Nhập a: ");
+    let b = prompt("Nhập b: ");
 
     alert(swap(a, b));
 </script>

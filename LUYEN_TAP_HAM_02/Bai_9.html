@@ -30,7 +30,7 @@
         else {
             Arr.push(txt);
         }
-        document.getElementById("Array").innerHTML = "Mảng là: " + Arr.join(", ");
+        document.getElementById("Array").innerHTML = `Mảng là: ${Arr.join(", ")}`;
     }
 
     function countNum(arr, num) {
@@ -49,7 +49,7 @@
     function count() {
         let num = document.getElementById("num").value;
         let a = countNum(Arr, num);
-        document.getElementById("result").innerHTML = "Có " + a + " ký tự " + num + " trong mảng";
+        document.getElementById("result").innerHTML = `Có ${a} ký tự ${num} trong mảng`;
     }
 
 </script>
