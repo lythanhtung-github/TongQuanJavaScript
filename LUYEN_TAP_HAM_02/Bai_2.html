@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+
+<body>
+    <label for="txtR">Nhập R:</label>
+    <input type="number" id="txtR">
+    <button type="button" onclick="tinhSVaC()">Tính S và C</button>
+    <p id="S"></p>
+    <p id="C"></p>
+
+</body>
+
+<script>
+
+    function tinhSVaC() {
+        let r = Number(document.getElementById("txtR").value);
+        document.getElementById("S").innerHTML = "Diện tích là: " + tinhDienTich(r);
+        document.getElementById("C").innerHTML = "Chu vi là: " + tinhChuVi(r);
+    }
+
+    function tinhDienTich(r) {
+        return (Math.PI * Math.pow(r, 2));
+    }
+    function tinhChuVi(r) {
+        return (2 * r * Math.PI);
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function tinhGiaThua(n){
+        let result = "";
+        let x =1;
+        if (n <0)
+        {
+            result =("Không thể tính giai thừa cho số âm");
+        }
+        else if (n==0)
+        {
+            x = 1;
+            result = "Giai thừa của "+ n + " là: "+ x;
+        }
+        else
+        {
+            for (let i=1; i<=n; i++) {
+                x = x * i;
+            }
+            result = "Giai thừa của "+ n + " là: "+ x;
+        }
+        return result;
+    }
+    let n = Number(prompt("Nhập n:"));
+    alert(tinhGiaThua(n));
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8</title>
+</head>
+
+<body>
+    <label for="txtElementArray">Nhập mảng:</label>
+    <input type="text" id="txtElementArray">
+    <button type="button" onclick="getArray()">Thêm</button>
+    <button type="button" onclick="reverseArray()">Đảo ngược mảng</button><br><br>
+    <span id="reverseArray"></span>
+</body>
+
+<script>
+    function addArray() { 
+         var Arr = new Array();
+         let txt = document.getElementById("txtElementArray").value;
+        if (txt == "") {
+            alert("Không thể thêm phần tử rỗng, vui lòng nhập ký tự");
+        }
+        else {
+            Arr.push(txt);  
+        }  
+        return Arr;
+    }
+
+    function reverseArray(Arr) {
+        var reverseArr = new Array();
+        for (var j = Arr.length - 1; j >= 0; j--) {
+            reverseArr.push(Arr[j]);
+        }
+       return reverseArr;
+    }
+
+    function getArray(){
+        var arr = addArray(); 
+        document.getElementById("reverseArray").innerHTML = reverseArray(arr.join(", "));  
+    }
+   
+</script>
+</html> 
