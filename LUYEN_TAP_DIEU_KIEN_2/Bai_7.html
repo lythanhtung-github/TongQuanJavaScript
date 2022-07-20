@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,11 @@
     <style>
     </style>
 </head>
+
 <body>
-    <table border = 1px>
+    <table border=1px>
         <thead>
-            <th colspan ="2">GIẢI PHƯƠNG TRÌNH BẬC 2</th>
+            <th colspan="2">GIẢI PHƯƠNG TRÌNH BẬC 2</th>
         </thead>
         <tbody>
             <tr>
@@ -31,7 +33,9 @@
                     <button type="button" id="btnGiai" onclick="giaiPT()">Giải PT</button>
                     <button type="button" id="btn_Reset" onclick="reset()">Reset</button>
                 </td>
-                <td><p id ="result" style="font-weight: bold"></p></td>
+                <td>
+                    <p id="result" style="font-weight: bold"></p>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -42,41 +46,24 @@
         let tsA = document.getElementById("thamsoA").value;
         let tsB = document.getElementById("thamsoB").value;
         let tsC = document.getElementById("thamsoC").value;
-        let result = "";
-        if (tsA == 0){
-            if (tsB == 0){
-                if (tsC == 0){
-                    document.getElementById("result").innerHTML = "Phương trình có vô số nghiệm";
-                }
-                else{
-                    document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
-                }
-            }
-            else{  
-                document.getElementById("result").innerHTML = "Phương trình có 1 nghiệm là: " + (-tsC/tsB);
-            }
+        let result = document.getElementById("result");
+        if (tsA == 0) {
+            tsB == 0 ? tsC == 0 ? result.innerHTML = "Phương trình có vô số nghiệm" : result.innerHTML = "Phương trình vô nghiệm"
+                : result.innerHTML = "Phương trình có 1 nghiệm là: " + (-tsC / tsB);
         }
         else {
-            let dt = Math.pow(tsB, 2)- 4*tsA*tsC;
-            if (dt <0){
-                document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
-            }
-            else if (dt == 0){
-                document.getElementById("result").innerHTML = 
-                "Phương trình có nghiệm kép x<sub>1</sub> = x<sub>2</sub> = " + ((- tsB)/(2*tsA));
-            }
-            else {
-                document.getElementById("result").innerHTML = 
-                "Phương trình có 2 nghiệm phân biệt: <br> x<sub>1</sub> = " + (((- tsB)+(Math.sqrt(dt)))/(2*tsA)) + "<br>và<br>" + "x<sub>2</sub> = " + (((-tsB)-(Math.sqrt(dt)))/(2*tsA));
-            }
+            let dt = Math.pow(tsB, 2) - 4 * tsA * tsC;
+            dt < 0 ? result.innerHTML = "Phương trình vô nghiệm" : dt == 0 ? result.innerHTML = "Phương trình có nghiệm kép x = " + ((- tsB) / (2 * tsA))
+                : result.innerHTML = "Phương trình có 2 nghiệm phân biệt: <br> x<sub>1</sub> = " + (((- tsB) + (Math.sqrt(dt))) / (2 * tsA)) + "<br>và<br>" + "x<sub>2</sub> = " + (((-tsB) - (Math.sqrt(dt))) / (2 * tsA));
         }
     }
-    function reset(){
-        document.getElementById("thamsoA").value= null;
-        document.getElementById("thamsoB").value= null;
-        document.getElementById("thamsoC").value= null;
-        document.getElementById("result").innerHTML= null;
+    function reset() {
+        document.getElementById("thamsoA").value = null;
+        document.getElementById("thamsoB").value = null;
+        document.getElementById("thamsoC").value = null;
+        document.getElementById("result").innerHTML = null;
     }
 
 </script>
+
 </html>
