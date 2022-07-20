@@ -1,0 +1,15 @@
+.container{
+    width: 450px;
+    margin: 0px auto;
+}
+table{
+    width:100%;
+    text-align: center;
+}
+
+#color-area{
+    width:450px;
+    height: 80px;
+    vertical-align: middle;
+    line-height: 4;
+}

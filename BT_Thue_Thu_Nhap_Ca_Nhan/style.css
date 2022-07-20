@@ -1,0 +1,33 @@
+div{
+    background-color: rgb(60, 207, 78);
+    height: 200px;
+    width: 500px;
+    color:aliceblue;
+    font-size: 20px;
+    padding: 20px;
+}
+#tb_income{
+   height:120px;
+   width: 500px;
+}
+input{
+    margin:7px;
+    width: 250px;
+    height:25px;
+    font-size: 15px;
+}
+button{
+    border-color: aliceblue;
+    font-size: 15px;
+    margin: 20px;
+    padding: 10px;
+    color: aliceblue;
+    background-color: rgb(239, 91, 12);
+}
+#td_bnt{
+    text-align: center;
+    
+}
+thead{
+    font-size: 25px;
+}

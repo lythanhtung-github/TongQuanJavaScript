@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test1</title>
+</head>
+<body>   
+</body>
+
+<script>
+    function Student(id, name, address){
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.getInfor = function(){ 
+            return "Id="+this.id+" name="+this.name+" address="+this.address;
+        }
+    }
+    var student = new Student(1, "Ly Thanh Tung", "Thua Thien Hue");
+    console.log(student.getInfor());
+</script>
+
+</html>

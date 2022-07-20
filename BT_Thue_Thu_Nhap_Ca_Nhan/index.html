@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="vietnam.png">
+    <title>Tính thuế thu nhập cá nhân</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <table id = "tb_income">
+            <thead>
+                <tr><th colspan="3">THUẾ THU NHẬP CÁ NHÂN</th></tr>
+                <tr></tr>
+                <tr></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Thu nhập: </td>
+                    <td>
+                        <input type="number" id="income" min="0">
+                    </td>
+                    <td>triệu VNĐ</td>
+                </tr>
+                <tr>
+                    <td>Thuế phải nộp:</td>
+                    <td>
+                        <input readonly type="text" id="result">
+                    </td>
+                    <td>triệu VNĐ</td>
+                </tr>
+                <tr>
+                    <td colspan="3" id = "td_bnt">
+                        <button type="button" onclick="calIncomeTax()">Xem kết quả</button>
+                        <button type="button" onclick="reset()">Làm mới</button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
