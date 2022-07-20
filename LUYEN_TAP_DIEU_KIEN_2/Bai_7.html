@@ -48,22 +48,20 @@
         let tsC = document.getElementById("thamsoC").value;
         let result = document.getElementById("result");
         if (tsA == 0) {
-            tsB == 0 ? tsC == 0 ? result.innerHTML = "Phương trình có vô số nghiệm" : result.innerHTML = "Phương trình vô nghiệm"
-                : result.innerHTML = "Phương trình có 1 nghiệm là: " + (-tsC / tsB);
+            result.innerHTML = `${tsB == 0 ? tsC == 0 ?"Vô số nghiệm":"Vô nghiệm":`1 nghiệm: ${(-tsC/tsB)}`}`;
         }
         else {
             let dt = Math.pow(tsB, 2) - 4 * tsA * tsC;
-            dt < 0 ? result.innerHTML = "Phương trình vô nghiệm" : dt == 0 ? result.innerHTML = "Phương trình có nghiệm kép x = " + ((- tsB) / (2 * tsA))
-                : result.innerHTML = "Phương trình có 2 nghiệm phân biệt: <br> x<sub>1</sub> = " + (((- tsB) + (Math.sqrt(dt))) / (2 * tsA)) + "<br>và<br>" + "x<sub>2</sub> = " + (((-tsB) - (Math.sqrt(dt))) / (2 * tsA));
+            result.innerHTML = `${dt < 0 ? "Vô nghiệm" : dt == 0 ? `Nghiệm kép x = ${(((- tsB) / (2 * tsA))).toFixed(3)}`
+                :`2 nghiệm phân biệt: <br> x<sub>1</sub> = ${((((- tsB) + (Math.sqrt(dt))) / (2 * tsA))).toFixed(3)} <br>và<br> x<sub>2</sub> = ${((((-tsB) - (Math.sqrt(dt))) / (2 * tsA))).toFixed(3)}`}`;
         }
-    }
+    }                                                               
     function reset() {
         document.getElementById("thamsoA").value = null;
         document.getElementById("thamsoB").value = null;
         document.getElementById("thamsoC").value = null;
         document.getElementById("result").innerHTML = null;
     }
-
 </script>
 
 </html>
