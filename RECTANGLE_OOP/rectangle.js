@@ -37,6 +37,7 @@ class Rectangle {
         return (this.width + this.height) * 2;
     }
 }
+
 let rectangle = new Rectangle();
 let width = rectangle.setWidth(400);
 let height = rectangle.setHeight(200);
