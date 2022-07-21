@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp hình tròn</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let Circle = function(radius){
+        this.radius = radius;
+        this.getRadius = function(){ return radius;};
+        this.getArea = function(){ return Math.PI*Math.pow(radius, 2);};
+    }
+
+    let circle = new Circle(2);
+    let radius = circle.getRadius();
+    let area = circle.getArea();
+    alert(`radius: ${radius} and area: ${area.toFixed(3)}`);
+
+</script>
+</html>

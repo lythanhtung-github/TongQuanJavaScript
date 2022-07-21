@@ -16,21 +16,21 @@
     let count = 0;
     while(i<1000){
         c = a + b;
-        if (c %5 == 0){
-            document.write(c + "<br>");
+        if(c %5 == 0){
+            document.write(`${c} <br>`);
             count+=1;
         }
         a = b + c;
-        if (a %5 == 0){
-            document.write(a + "<br>");
+        if(a %5 == 0){
+            document.write(`${a} <br>`);
             count+=1;
         }
         b = c + a;
-        if (b %5 == 0){
-            document.write(b + "<br>");
+        if(b %5 == 0){
+            document.write(`${b} <br>`);
             count+=1;
         }
-        if (count ==5){break;}
+        if(count ==5) break;
         i++;
     }
 </script>

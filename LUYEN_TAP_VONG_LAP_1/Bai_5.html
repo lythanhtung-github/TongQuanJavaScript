@@ -10,19 +10,21 @@
     
   </body>
   <script>
+    let sum = 0;
+    let n1 = 0; 
+    let n2 = 1; 
+    let n3;
 
-let a = 0;
-let b = 1;
-let c = 1;
-let sum = 0;
-let count = 0;
-let numb = prompt('Enter your number: ');
-for (let i = 0; i <(numb/3); i++) {
-    a = b+c;   
-    b = c+a;
-    c = a+b;
-    sum = a + b + c + sum;
-}
-document.write(sum);
+    let number = Number(prompt('Enter the number of terms: '));
+
+    document.write(`${number} số Fibonacci đầu tiên là: <br>`);
+    for (let i = 1; i <= number; i++) {
+        document.write(`${n1} <br>`);
+        sum += n1;
+        n3 = n1 + n2;
+        n1 = n2;
+        n2 = n3;
+    }
+  document.write(`Tổng của ${number} số Fibonacci đầu tiên là ${sum}`);
   </script>
   </html>

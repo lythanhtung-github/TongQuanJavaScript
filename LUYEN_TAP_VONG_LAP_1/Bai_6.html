@@ -10,18 +10,14 @@
     
 </body>
 <script>
-    let sum = 0;
-    let count = 0;
-    let i;
-
-        for (i = 0; i < 5000; i++) {
-            if ((i % 7) ==0)
-            {
-                sum = sum + i;
-                if(count == 30){break;}
-                count = count +1;   
-            }
+var sum =0;
+    for (var i, count =0; i < 5000 && count == 30; i++) {
+        if ((i % 7) ==0)
+        {
+                sum += i;
+                count += 1;   
         }
-    alert("Tổng của 30 số đầu tiên chia hết cho 7 là: "+sum);  
+    }
+    alert(`Tổng của 30 số đầu tiên chia hết cho 7 là: ${sum}`);  
 </script>
 </html>
