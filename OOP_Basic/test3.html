@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 3</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="200" height="100"></canvas><br>
+    <canvas id="myCanvas2" width="200" height="100"></canvas><br>
+    <canvas id="myCanvas3" width="200" height="100"></canvas><br>
+    <canvas id="myCanvas4" width="200" height="100"></canvas><br>
+    <canvas id="myCanvas5" width="200" height="100"></canvas><br>
+    <canvas id="myCanvas6" width="200" height="100"></canvas><br>
+</body>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+
+    var b = document.getElementById("myCanvas2");
+    var dt = b.getContext("2d");
+    dt.beginPath();
+    dt.arc(95,50,40,0,2*Math.PI);
+    dt.stroke();
+
+    var a = document.getElementById("myCanvas3");
+    var chu = a.getContext("2d");
+    chu.font = "30px Arial";
+    chu.fillText("Hello World",10,50);
+
+
+    var d = document.getElementById("myCanvas4");
+    var chu2 = d.getContext("2d");
+    chu2.font = "30px Arial";
+    chu2.strokeText("Hello World",10,50);
+
+
+    var e = document.getElementById("myCanvas5");
+    var grd_ = e.getContext("2d");
+    // Create gradient
+    var grd = grd_.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+    // Fill with gradient
+    grd_.fillStyle = grd;
+    grd_.fillRect(10,10,150,80);
+
+    var f = document.getElementById("myCanvas6");
+    var grd_t = f.getContext("2d");
+    // Create gradient
+    var grd = grd_t.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+    // Fill with gradient
+    grd_t.fillStyle = grd;
+    grd_t.fillRect(10,10,150,80);
+
+</script>
+</html>
