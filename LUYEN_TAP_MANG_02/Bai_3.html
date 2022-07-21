@@ -16,7 +16,7 @@
 </body>
 <script>
     var Arr = new Array(); // Mảng
-    let count = 0;
+    
     function addArray() { // Thêm phần tử cho mảng
         let txt = document.getElementById("txtElementArray").value;
         if (txt == "") {
@@ -30,8 +30,9 @@
     }
 
     function countNum() {
+        let count = 0;
         for (let i = 0; i < Arr.length; i++) {
-            if (parseInt(Arr[i]) != NaN) {
+            if (isNaN(Arr[i]) == false) {
                 count = count + 1;
             }
         }
