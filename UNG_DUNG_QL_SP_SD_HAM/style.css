@@ -1,4 +1,95 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button{
+    width: 6rem;
+    height: auto;
+    background-color: rgb(59, 85, 235);
+    border: none;
+    border-radius: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    color:aliceblue;
+    padding: 5px;
+    margin:10px;
+}
+
+button:hover{
+    background-color: rgb(4, 102, 94);
+}
+
+input{
+   width: 12rem;
+   height: 20px;
+   margin: 10px 0px 10px 10px;
+   font-size: 18px;
+   font-weight: bold;
+}
+
 #div_Add{
-    height: 200px;
-    width: 300px;
+    text-align: center;
+    height: 80px;
+    width: 40rem;
+    background-color: rgb(203, 211, 208);
+    padding: 0px;
+}
+
+#table_2{
+    width: 40rem;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+#table_2 tr:nth-child(even){
+    background-color: rgb(203, 211, 208);
+}
+#table,tr,td {
+    border: none;
+    padding :0px;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+}
+#table_2 tr:hover{
+    background-color: rgb(130, 233, 139);
+}
+
+#table_1 tr td{
+    font-size: 20px;
+    width: 30rem;
+    padding:20px;
+}
+
+#td_count{
+    color: red;
+    font-weight: bold;
+    text-align: right;
+}
+#td_product{
+    font-weight: bold;
+}
+
+
+table td:first-child{
+    width: 320px;
+}
+h2{
+    margin : 20px 0px 10px 30px ;
+    font-weight: bold;
+    color:blue
+}
+#div_1 ,#div_All{
+    background-color: rgb(245, 237, 220) ;
+    border: 1px black solid;
+    width: 40rem;
+    height: auto;
+    margin:10px
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+.d-none{
+    display: none;
 }
