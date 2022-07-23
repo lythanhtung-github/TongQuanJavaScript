@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoạt động đèn pin</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    class Battery{
+
+        setEnergy(energy){
+            this.energy = energy;
+        };
+
+        getEnergy(){ 
+            return this.energy;
+        };
+
+        //Giảm năng lượng
+        decreaseEnergy(){ 
+            if (this.energy > 0) {
+            this.energy--;
+            };
+        };
+    };
+    
+    class FlashLamp{
+
+        setBattery(battery){
+            this.battery = battery;
+        };
+
+        getBatteryInfo(){
+            return this.battery.getEnergy();
+        };
+
+        light(){
+            this.status?alert("Lighting"):alert("Not lighting");
+        }
+
+        turnOn() {
+        this.status = true;
+        };
+    
+        turnOff() {
+        this.status = false;
+        };
+    };
+
+    let battery = new Battery();
+    battery.setEnergy(10);
+
+    let flashLamp = new FlashLamp();
+    flashLamp.setBattery(battery);
+
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    flashLamp.light();
+
+    // document.write("Turn on<br/>")
+    // flashLamp.turnOn();
+    // flashLamp.light();
+    // document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+
+    // document.write("Turn off<br/>")
+    // flashLamp.turnOff();
+    // flashLamp.light();
+
+</script>
+</html>
