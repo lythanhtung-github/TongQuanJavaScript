@@ -2,7 +2,7 @@ const step = 100;
 const sizeHero = 200;
 const ranTop = Math.floor(Math.random() *window.innerWidth - sizeHero - step);
 const ranLeft = Math.floor(Math.random() *window.innerHeight - sizeHero - step);
-const img = "doremon.png"
+const img = "doremon.png";
 
 
 function Hero(image, top, left, size){
@@ -60,7 +60,7 @@ function Hero(image, top, left, size){
     }
 
     document.getElementById('game').innerHTML = hero.getHeroElement();
-    setTimeout(start, 500)
+    setTimeout(start, 500);
   }
   
   start();
