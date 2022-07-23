@@ -54,6 +54,8 @@
 
     let battery = new Battery();
     battery.setEnergy(10);
+    battery.decreaseEnergy();
+    alert(battery.getEnergy());
 
     let flashLamp = new FlashLamp();
     flashLamp.setBattery(battery);
