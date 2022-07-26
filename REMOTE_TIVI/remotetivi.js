@@ -1,72 +1,103 @@
-class Remote{
-    constructor(id, tivi){
+class Remote {
+    constructor(id, tv) {
         this.id = id;
-        this.tivi = tivi;
+        this.tv = tv;
     }
    
-    turnOnTivi(){
-        if (this.tivi.status == false){
-            this.tivi.status = true;
-            return("Đã bật Tivi");
+    turnOnTV() {
+        if ( this.tv.status == false){
+            this.tv.status = true;
+            document.write("Đã bật Tivi <br>");
         }
-        else return("Tivi đang bật");
+        else document.write("Tivi đang bật <br>");
     }
-    turnOffTivi(){
-        if (this.tivi.status == true){
-            this.tivi.status = false;
-            return("Tivi đã tắt");
+    turnOffTV(){
+        if (this.tv.status == true){ 
+            this.tv.status = false;
+            document.write("Đã tắt Tivi <br>");
         }
-        else return("Tivi đang tắt");
+        else document.write("Tivi đang tắt <br>");
     }
-    turnUpVolume(tivi){
-        if (this.tivi.volume>0 && this.tivi.volume<=100)
+    turnUpVolume() {
+        if (this.tv.status == true){
+            if (this.tv.volume>0 && this.tv.volume<=100)
+            {
+                this.tv.volume = this.tv.volume+2;
+                document.write(`Đã volume lên ${this.tv.volume} <br>`);
+            }
+        }
+        else document.write(`Tivi đã tắt không thể tăng volume <br>`);
+    }
+
+    turnDownVolume(){
+        if (this.tv.status == true){
+            if (this.tv.volume>0 && this.tv.volume<=100)
         {
-            this.tivi.volume +=2;
+            this.tv.volume = this.tv.volume-2;
+            document.write(`Đã volume xuống ${this.tv.volume} <br>`);
         }
+        }
+        else document.write(`Tivi đã tắt không thể giảm volume <br>`);
     }
 
-    turnDownVolume(tivi){
-        if (tivi.volume>0 && tivi.volume<=100)
-        {
-            this.tivi.volume -=2;
+    changeChannels(channel){
+        if (this.tv.status == true){
+            this.tv.setChannel(channel);
         }
-    }
-
-    turnUpChannel(tivi){
-        if (this.tivi.channel <=10 && this.tivi.channel >0){
-            this.tivi.channel ++;
-        }
-    }
-
-    turnDownChannel(tivi){
-        if (this.tivi.channel <=10 && this.tivi.channel >0){
-            this.tivi.channel --;
-        }
+        else document.write(`Tivi đã tắt không thể chuyển kênh <br>`);
     }
 }
 
-class Tivi{
+class Tivi {
     status;
     constructor(volume, channel){
         this.volume = volume;
         this.channel = channel;
     }
-    getStatus(){
-        return this.status;
+
+    // setStatus(status){
+    //     this.status = status;
+    // }
+    // getStatus(){
+    //     return this.status;
+    // }
+
+    // setVolume(volume){
+    //     this.volume = volume;
+    // }
+
+    // getVolume(){
+    //     return this.volume;
+    // }
+
+    setChannel(channel){
+        this.channel = channel;
     }
-    tiviOn(){
-        this.status = true;
-        return this.status;
+    getChannel(){
+        return this.channel; 
     }
 
-    tiviOff(){
+    tvOn(){
+        return this.status = true;
+    }
+
+    tvOff(){
         return this.status = false;
     }  
 }
-let tivi = new Tivi(50,7);
-let remote = new Remote("remote1", tivi);
 
-tivi.tiviOff();
- 
-remote.turnOnTivi();
-alert(remote.turnOnTivi());
+let tv1 = new Tivi(50,7);
+let remote1 = new Remote("remote1", tv1);
+
+tv1.tvOff();
+remote1.turnOnTV();
+remote1.turnUpVolume();
+remote1.turnUpVolume();
+remote1.turnUpVolume();
+remote1. turnDownVolume();
+remote1.changeChannels("Channel 7");
+document.write(`Đã chuyển channel hiện tại sang kênh ${tv1.getChannel()} <br>`);
+remote1.turnOffTV();
+remote1.turnUpVolume();
+remote1.changeChannels("Channel 8");
+
