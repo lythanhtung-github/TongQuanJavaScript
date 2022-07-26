@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="array.css">
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="2" class="dau_cuoi">MẢNG</td>
+            </tr>
+            <tr>
+                <td>Nhập kích cỡ mảng: </td>
+                <td>
+                    <input type="number" id = "size" min="0">
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập min: </td>
+                <td>
+                    <input  type="number" id = "min">
+                </td>
+            </tr>
+            <tr>
+                <td>Nhập max: </td>
+                <td>
+                    <input  type="number" id = "max">
+                </td>
+            </tr>
+            <tr>
+                <td>Mảng: </td>
+                <td>
+                    <textarea readonly id = "array"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Giá trị lớn nhất: </td>
+                <td>
+                    <input  readonly type="text" id = "maxOfArray">
+                </td>
+            </tr>
+            <tr>
+                <td>Số lượng số chẵn: </td>
+                <td> <input readonly type="text" id = "countEven" ></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="dau_cuoi">
+                    <button type="button" onclick = "getResult()">Kết quả</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script src="array.js"></script>
+</html>

@@ -1,0 +1,28 @@
+button{
+    font-size:20px;
+}
+.divTable
+{   padding-top: 20px;
+    position: absolute;
+    display:  table;
+}
+
+.divRow
+{
+   display:table-row;
+   width:auto;
+}
+
+.divCell
+{
+    display:table-column;
+    float:left;
+    color:red;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+    border:1px rgb(5, 67, 238) solid;
+    text-align: center;
+    vertical-align: middle;
+}
+

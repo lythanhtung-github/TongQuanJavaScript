@@ -1,0 +1,23 @@
+*{
+    font-size: 1.2rem;
+    font-weight:100;
+}
+table tr td{
+    border:1px black solid;
+}
+tr td {
+   padding: 0px;
+   margin:0px;
+}   
+
+
+.dau_cuoi{
+    font-weight: bold;
+    text-align: center;
+    margin:20px;  
+    padding:10px  
+}
+textarea{
+    height: 60px;
+    width: 300px
+}

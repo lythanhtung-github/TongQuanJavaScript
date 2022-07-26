@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "table_1"></div>
+</body>
+
+<script>
+    let Array_1 = [
+    ["Ronaldo", "Bồ Đào Nha", "05/02/1985", "100/100/100"],
+    ["Ronaldo", "Bồ Đào Nha", "05/02/1985", "100/100/100"],
+    ["Ronaldo", "Bồ Đào Nha", "05/02/1985", "100/100/100"],
+    ];
+    let strHTML = "";
+    strHTML += "<table border=1px>";
+    strHTML += "<tbody>";
+        for(let row = 0; row<3; row++){
+            strHTML += "<tr>";
+            for (let col = 0; col < 4; col++){
+                strHTML += `<td>${Array_1[row][col]}</td>`;
+            }
+            strHTML += "</tr>"
+        }
+
+    strHTML += "</tbody>";
+    strHTML += "</table>";
+    
+    document.querySelector("#table_1").innerHTML = strHTML;
+
+
+
+</script>
+</html>

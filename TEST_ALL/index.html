@@ -10,11 +10,16 @@
     
 </body>
 <script>
-    let length = Number(prompt("Nhập kích thước của mảng: "));
-    let arr = new Array(length);
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = Number(prompt(`Nhập số thứ ${i+1}: `));
+
+    //[min,max] => Math.floor(Math.random() *(max-min+1) +min) 
+    let size = Number(prompt("Nhập kích thước của mảng: "));
+    let numbers = new Array(size);
+    const max = 30;
+    const min = 5;
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] = Math.floor(Math.random() *(max-min+1) + min);
+        document.write(numbers[i]+ "<br>");
     }
-    document.write(arr);
+    
 </script>
 </html>
