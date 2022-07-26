@@ -7,9 +7,6 @@ class Mouse{
         this.speed = speed;
     }
     
-    getStatus(){
-        return this.status;
-    }
     mouseDie(){
         return this.status = false;
     }

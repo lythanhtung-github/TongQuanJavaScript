@@ -93,8 +93,4 @@ iphone.setStatus(true);
 iphone.setTinNhanDen(nokia.getTinNhanDaGui());
 iphone.setTinNhanSoanThao("I am iphone");
 
-
 document.write(`${iphoneName} đã gửi nhận tin nhắn "${nokia.getTinNhanDaGui()}" <br>`);
-
-
-
