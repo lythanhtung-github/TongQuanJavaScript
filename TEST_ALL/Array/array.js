@@ -4,16 +4,18 @@ function getResult(){
     let max = Number(document.querySelector('#max').value);
     let maxOfArray;
     let countEven = 0;
+    let total = 0;
     if (checkSize(size) ==true){
 
         let numbers = new Array(size);
         for (let i = 0; i < numbers.length; i++) {
             numbers[i] = Math.floor(Math.random() * (max -min+1) + min);
         };
-        
+        total = numbers[0];
         maxOfArray = numbers[0];
         if (numbers[0]%2 == 0){countEven +=1};
         for (let j = 1; j < numbers.length; j++) {
+            total += numbers[j];
             if (numbers[j] > maxOfArray){
                 maxOfArray = numbers[j];
             }
@@ -23,6 +25,7 @@ function getResult(){
         };
 
         document.querySelector('#array').innerHTML = numbers;
+        document.querySelector('#total').value = total;
         document.querySelector('#maxOfArray').value = maxOfArray;
         document.querySelector('#countEven').value = countEven;
     }
