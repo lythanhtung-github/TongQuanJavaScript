@@ -5,11 +5,12 @@ updateCount();
 renderProduct();
 
 function renderProduct() {
-    let string_table = "";
-    string_table += "<table id = 'table_2'>";
-    string_table += "<tbody>";
+    let tableProduct = document.querySelector("#table_product");
+    let stringTable = "";
+    stringTable += "<table id = 'table_2'>";
+    stringTable += "<tbody>";
     for (let row = 0; row < Arr.length; row++) {
-        string_table += `<tr id = "tr_${row}">
+        stringTable += `<tr id = "tr_${row}">
                         <td id="tdProduct_${row}">${Arr[row]}</td>
                         <td>
                             <button onclick="updateProduct(${row})" id="btnEdit_${row}" type="button" class="">Edit</button>
@@ -21,9 +22,9 @@ function renderProduct() {
                         </td>
                     </tr>`;
     }
-    string_table += "</tbody>";
-    string_table += "</table>";
-    document.querySelector("#table_product").innerHTML = string_table;
+    stringTable += "</tbody>";
+    stringTable += "</table>";
+    tableProduct.innerHTML = stringTable;
 }
 
 function updateCount() { 
@@ -33,7 +34,7 @@ function updateCount() {
 function deleteProduct(row) {
     let confirmed = window.confirm("Are sure to remove this job?");
     if (confirmed) {
-        Arr.splice(0, 1);
+        Arr.splice(row, 1);
         document.querySelector(`#tr_${row}`).remove();
         updateCount();
         renderProduct();
@@ -43,10 +44,8 @@ function deleteProduct(row) {
 function updateProduct(row) {
     let productNameTd = Arr[row];
     document.querySelector(`#tdProduct_${row}`).innerHTML = `<input type='text' id="txtProduct_${row}" value='${productNameTd}'>`;
-
-    document.querySelector(`#btnEdit_${row}`).classList.add('d-none');
-    document.querySelector(`#btnSave_${row}`).classList.remove('d-none');
-    document.querySelector(`#btnCancel_${row}`).classList.remove('d-none');
+    hideButtonEdit(row);
+    
 }
 
 function saveProduct(row) {
@@ -57,19 +56,13 @@ function saveProduct(row) {
         Arr[row] = productNameTd;
         renderProduct();
     }
-    
-    document.querySelector(`#btnEdit_${row}`).classList.remove('d-none');
-    document.querySelector(`#btnSave_${row}`).classList.add('d-none');
-    document.querySelector(`#btnCancel_${row}`).classList.add('d-none');
+    hideButtonSaveDelete(row);
 }
 
 function cancelProduct(row) {
     let productNameTd = Arr[row];
     document.querySelector(`#tdProduct_${row}`).innerHTML = productNameTd;
-
-    document.querySelector(`#btnEdit_${row}`).classList.remove('d-none');
-    document.querySelector(`#btnSave_${row}`).classList.add('d-none');
-    document.querySelector(`#btnCancel_${row}`).classList.add('d-none');
+    hideButtonSaveDelete(row);
 }
 
 function addProduct() {
@@ -78,5 +71,16 @@ function addProduct() {
     alert(`You just added "${productName.value}" to product list`);
     renderProduct();
     updateCount(Arr.length);
-   
+}
+
+function hideButtonEdit(row){
+    document.querySelector(`#btnEdit_${row}`).classList.add('d-none');
+    document.querySelector(`#btnSave_${row}`).classList.remove('d-none');
+    document.querySelector(`#btnCancel_${row}`).classList.remove('d-none');
+}
+
+function hideButtonSaveDelete(row) {
+    document.querySelector(`#btnEdit_${row}`).classList.remove('d-none');
+    document.querySelector(`#btnSave_${row}`).classList.add('d-none');
+    document.querySelector(`#btnCancel_${row}`).classList.add('d-none');
 }
