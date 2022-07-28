@@ -1,9 +1,3 @@
-
-let Arr = ["Sony Xperia", "Samsung Galaxy", "Iphone", "Google Pixel", "Xiaomi", "Oppo", "BlackBerry", "Realme", "Vivo", "Vinsmart"];
-
-updateCount();
-renderProduct();
-
 function renderProduct() {
     let tableProduct = document.querySelector("#table_product");
     let stringTable = "";
@@ -27,8 +21,8 @@ function renderProduct() {
     tableProduct.innerHTML = stringTable;
 }
 
-function updateCount() { 
-    document.querySelector("#td_count").innerHTML = `${Arr.length} products`; 
+function updateCount(count) { 
+    document.querySelector("#td_count").innerHTML = `${count} products`; 
 }
 
 function deleteProduct(row) {
@@ -36,7 +30,7 @@ function deleteProduct(row) {
     if (confirmed) {
         Arr.splice(row, 1);
         document.querySelector(`#tr_${row}`).remove();
-        updateCount();
+        updateCount(Arr.length);
         renderProduct();
     }
 };
@@ -45,7 +39,6 @@ function updateProduct(row) {
     let productNameTd = Arr[row];
     document.querySelector(`#tdProduct_${row}`).innerHTML = `<input type='text' id="txtProduct_${row}" value='${productNameTd}'>`;
     hideButtonEdit(row);
-    
 }
 
 function saveProduct(row) {
@@ -55,6 +48,9 @@ function saveProduct(row) {
         document.querySelector(`#tdProduct_${row}`).innerHTML = productNameTd;
         Arr[row] = productNameTd;
         renderProduct();
+    }
+    else{ 
+        document.querySelector(`#tdProduct_${row}`).innerHTML = Arr[row];
     }
     hideButtonSaveDelete(row);
 }
@@ -66,8 +62,8 @@ function cancelProduct(row) {
 }
 
 function addProduct() {
-    let productName = document.querySelector(`#txt_Add`);
-    Arr[Arr.length] = productName.value; 
+    let productName = document.querySelector(`#txt_Add`).value;
+    Arr.push(productName);
     alert(`You just added "${productName.value}" to product list`);
     renderProduct();
     updateCount(Arr.length);
@@ -84,3 +80,7 @@ function hideButtonSaveDelete(row) {
     document.querySelector(`#btnSave_${row}`).classList.add('d-none');
     document.querySelector(`#btnCancel_${row}`).classList.add('d-none');
 }
+let Arr = ["Sony Xperia", "Samsung Galaxy", "Iphone", "Google Pixel", "Xiaomi", "Oppo", "BlackBerry", "Realme", "Vivo", "Vinsmart"];
+updateCount(Arr.length);
+renderProduct();
+

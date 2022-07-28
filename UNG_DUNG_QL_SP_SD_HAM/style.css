@@ -45,6 +45,7 @@ input{
     background-color: rgb(203, 211, 208);
 }
 #table,tr,td {
+    border-collapse: collapse;
     border: none;
     padding :0px;
     margin: 0px;
