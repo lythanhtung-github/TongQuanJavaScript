@@ -5,11 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bouncing Game</title>
-    <link rel="stylesheet" href="bouncingball.css">
+    <link rel="stylesheet" href="game.css">
 </head>
 <body>
-    <div style = "text-align:center; margin:0px 20px 0px 0px;">Score: 100</div>
-    <canvas id ="myCanvas"></canvas>
+   
+    <div id = "div_top">
+        <span> Bouncing Ball Game </span>
+        <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <p>Level:</p>
+                    </td>
+                    <td>
+                        <p  class = "result" id = "level">1</p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <p>Score: </p>
+                    </td>
+                    <td>
+                        <p class = "result" id = "countScore">0</p>
+                    </td>
+                    <td></td>
+                </tr>
+        </table>
+    </div>
+     <div><canvas id = "myCanvas"></canvas></div>
+     <div id ="div_bot" >
+        <button type="button" onclick = "reset()">Play again</button>
+     </div>
 </body>
-<script src="bouncingball.js"></script>
-</html>
+<script src="game.js"></script>
+</html> 

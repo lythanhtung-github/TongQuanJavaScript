@@ -1,0 +1,70 @@
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+canvas {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(16, 15, 15);
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    border-radius: 10px;
+    border : 1px black solid;
+}
+
+#div_top {
+    margin:10px 0px 0px 12px ;
+    padding:0px;
+    background-color: rgb(15, 61, 62);
+    border: 1px black solid;
+    width:500px;
+    height: 130px;
+    border-radius: 10px;
+    text-align: center;
+}
+#div_bot {
+    margin:380px 0px 0px 12px ;
+    padding:0px;
+    background-color: rgb(15, 61, 62);;
+    border: 1px black solid;
+    width: 500px;
+    height: 70px;
+    border-radius: 10px;
+    text-align: right;
+}
+table {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height:25px;
+    vertical-align: top;
+    color: aliceblue;
+}
+td {
+    text-align: center;
+    width: 40px;
+    margin: 0px 10px 5px 10px;
+    padding: 0px;
+    font-size: 20px; 
+}
+span {
+    margin: 100px 0px 0px 0px ;
+    padding: 0px;
+    font-size: 50px;
+    color: aliceblue;
+    margin: 15px;
+}
+button {
+    background-color: rgb(226, 220, 200);
+    margin: 15px 20px 0px 0px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.result {
+    font-size: 25px;
+    color:red;
+}
