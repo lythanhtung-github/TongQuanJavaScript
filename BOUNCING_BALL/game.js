@@ -17,10 +17,6 @@ const gameOver_y = 80;
 
 let level = 1;
 
-let canvas = document.querySelector("#myCanvas");
-let ctx = canvas.getContext("2d");
-
-
 class Ball {
     score = 0;
     constructor(x, y, dx, dy, radius, bar){
@@ -31,6 +27,7 @@ class Ball {
         this.radius = radius;
         this.bar = bar;
     }
+
     setAttributes(x, y, dx, dy, radius){
         this.x = x;
         this.y = y;
@@ -38,6 +35,7 @@ class Ball {
         this.dy = dy;
         this.radius = radius;
     }
+
     drawBall(){
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
@@ -45,6 +43,7 @@ class Ball {
         ctx.fill();
         ctx.closePath();
     }
+
     upScore(){
         this.score = this.score + 1;
     }
@@ -61,6 +60,7 @@ class Ball {
                 this.upScore();
                 updateScore(this.score);
                 updateLevel(this.score);
+                
                 if (this.score >1){
                     this.dx = this.dx+0.01;
                     this.dy = this.dy-0.01;
@@ -75,7 +75,7 @@ class Ball {
         this.x = this.x + this.dx;
         this.y = this.y + this.dy;  
     }
-    
+
 }
 
 class Bar {
@@ -85,6 +85,7 @@ class Bar {
         this.bar_width = bar_width;
         this.bar_height = bar_height;
     }
+
     drawBar(){
         ctx.beginPath(); 
         ctx.fillStyle = " rgb(240, 248, 255)";
@@ -106,28 +107,33 @@ document.addEventListener('keydown', controlBar)
 function controlBar(e){
     switch(e.keyCode){
         case LEFT: 
-            if (bar.bar_x >0)
-            bar.bar_x -= bar_step;
+            if (bar.bar_x >0){
+                bar.bar_x -= bar_step;   
+            }
             break;
         case RIGHT:
-            if (bar.bar_x + bar.bar_width < canvas.width)
-            bar.bar_x += bar_step;
+            if (bar.bar_x + bar.bar_width < canvas.width){
+               bar.bar_x += bar_step; 
+            }
             break; 
     }
 }
 
+let canvas = document.querySelector("#myCanvas");
+let ctx = canvas.getContext("2d");
+
 function draw() {
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ball.drawBall();
     ball.checkBall();
-    
     bar.drawBar();
+
 }
 
 function reset(){
     document.location.reload();
 }
-
 
 function updateScore(score){
     let countScore = document.querySelector("#countScore");
@@ -154,8 +160,6 @@ function updateLevel(score){
     result.innerHTML =level;
 }
 
-
 let bar = new Bar(bar_x,bar_y, bar_width,bar_height); 
 let ball = new Ball(x, y, dx, dy, radius,bar);
-
 let interval = setInterval(draw,10);

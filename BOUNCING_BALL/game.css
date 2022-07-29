@@ -1,6 +1,7 @@
 * {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+
 canvas {
     margin: 0px;
     padding: 0px;
@@ -24,6 +25,7 @@ canvas {
     border-radius: 10px;
     text-align: center;
 }
+
 #div_bot {
     margin:380px 0px 0px 12px ;
     padding:0px;
@@ -34,6 +36,7 @@ canvas {
     border-radius: 10px;
     text-align: right;
 }
+
 table {
     margin: 0px;
     padding: 0px;
@@ -42,6 +45,7 @@ table {
     vertical-align: top;
     color: aliceblue;
 }
+
 td {
     text-align: center;
     width: 40px;
@@ -49,6 +53,7 @@ td {
     padding: 0px;
     font-size: 20px; 
 }
+
 span {
     margin: 100px 0px 0px 0px ;
     padding: 0px;
@@ -56,6 +61,7 @@ span {
     color: aliceblue;
     margin: 15px;
 }
+
 button {
     background-color: rgb(226, 220, 200);
     margin: 15px 20px 0px 0px;
@@ -64,6 +70,7 @@ button {
     border-radius: 10px;
     font-weight: bold;
 }
+
 .result {
     font-size: 25px;
     color:red;
