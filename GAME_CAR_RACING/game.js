@@ -1,37 +1,23 @@
 const LEFT = 37;
 const RIGHT = 39;
-
-const car_width = 32;
-const car_height = 32;
+const car_img = 'car2.png';
 const car_step = 10;
+let score = 0;
 
 let canvas = document.querySelector("#myCanvas");
 let ctx = canvas.getContext("2d");
 
-let car_x =canvas.width/2-16;
-let car_y = 120;  
+let barrier_step = 0.2;
 
-// Math.floor(Math.random() * (max - min)) + min;
-
-const barrier_width = 30;
-const barrier_height = 10;
-let barrier_x = Math.floor(Math.random() * (canvas.width-barrier_width-10))+10;
-let barrier_y = 0;
-let barrier_step = 0.3;
-
-const coin_radius = 8;
-let coin_x = Math.floor(Math.random() * (canvas.width-coin_radius-10))+10;
-let coin_y = 0;
-let coin_step = 0.2;
-
+let coin_step = 0.3;
 
 class Car {
   car_speed;
-  constructor(car_x, car_y, car_width, car_height, car_img, barrier, coin) {
-      this.car_x = car_x;
-      this.car_y = car_y;
-      this.car_width = car_width;
-      this.car_height = car_height; 
+  constructor(car_img, barrier, coin) {
+      this.x = canvas.width/2-16;
+      this.y =  120;
+      this.width = 32;
+      this.height = 32; 
       this.car_img = car_img;
       this.barrier = barrier;
       this.coin = coin;
@@ -41,21 +27,21 @@ class Car {
       this.car_image = new Image();
       this.car_image.src = this.car_img ;
       this.car_image.onload = () => {
-        ctx.drawImage(this.car_image, this.car_x, this.car_y, this.car_width, this.car_height);
+        ctx.drawImage(this.car_image, this.x, this.y, this.width, this.height);
       }
   }
 
   checkLose(){
-    if (this.barrier.barrier_x > this.car_x && this.barrier.barrier_x < this.car_x + this.car_width){
-      if (this.barrier.barrier_y + this.barrier.barrier_height > this.car_y )
+    if (this.barrier.x > this.x && this.barrier.x < this.x + this.width){
+      if (this.barrier.y + this.barrier.height > this.y )
       {
         alert("You lose");
         clearInterval(interval);
         document.location.reload();
       } 
     }
-    if (this.barrier.barrier_x + this.barrier.barrier_width > this.car_x && this.barrier.barrier_x + this.barrier.barrier_width < this.car_x + this.car_width){
-      if (this.barrier.barrier_y + this.barrier.barrier_height > this.car_y )
+    if (this.barrier.x + this.barrier.width > this.x && this.barrier.x + this.barrier.width < this.x + this.width){
+      if (this.barrier.y + this.barrier.height > this.y )
       {
         alert("You lose");
         clearInterval(interval);
@@ -65,16 +51,9 @@ class Car {
   }
 
   checkCoin(){
-    if (this.coin.coin_x > this.car_x && this.coin.coin_x < this.car_x + this.car_width) {
-      if (this.coin.coin_y + this.coin.coin_radius*2 > this.car_y )
-      {
-         alert("a");
-      } 
-    } 
-    if (this.coin.coin_x + this.coin.coin_radius*2 > this.car_x && this.coin.coin_x + this.coin.coin_radius*2 < this.car_x + this.car_width){
-      if (this.coin.coin_y + this.coin.coin_radius*2 > this.car_y )
-      {
-        alert("a");
+    if (this.coin.x - this.coin.radius > this.x && this.coin.x + this.coin.radius < this.x + this.width) {
+      if (this.coin.y + this.coin.radius > this.y ) {
+         score++;
       } 
     }
   }
@@ -84,13 +63,13 @@ document.addEventListener("keydown", controlCar);
 function controlCar(e){
   switch(e.keyCode){
       case LEFT: 
-          if (car.car_x >0){
-            car.car_x -= car_step;
+          if (car.x >0){
+            car.x -= car_step;
           }
           break;
       case RIGHT:
-          if (car.car_x + car.car_width < canvas.width){
-            car.car_x += car_step; 
+          if (car.x + car.width < canvas.width){
+            car.x += car_step; 
           }
           break; 
       default: break;
@@ -98,49 +77,50 @@ function controlCar(e){
 }
 
 class Barrier{
-  constructor(barrier_x, barrier_y, barrier_width, barrier_height)
+  constructor()
   {
-    this.barrier_x = barrier_x;
-    this.barrier_y = barrier_y;
-    this.barrier_width = barrier_width;
-    this.barrier_height = barrier_height;
+    this.x = Math.floor(Math.random() * (canvas.width-this.width-10))+10;;
+    this.y = 0;
+    this.width = 30;
+    this.height = 10;
   }
 
   drawBarrier(){
     ctx.beginPath();
     ctx.fillStyle = "red";
-    ctx.fillRect(this.barrier_x, this.barrier_y, this.barrier_width, this.barrier_height);
+    ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.fill();
     ctx.closePath(); 
-    if (this.barrier_y + barrier_height < canvas.height){
-      this.barrier_y += barrier_step;
+    if (this.y + this.height < canvas.height){
+      this.y += barrier_step;
     }
     else {
-      this.barrier_y = 0;
-      this.barrier_x = Math.floor(Math.random() * (canvas.width-barrier_width-10))+10;
+      this.y = 0;
+      this.x = Math.floor(Math.random() * (canvas.width-this.width-10))+10;
     }
   }  
 }
 
 class Coin{
-  constructor(coin_x, coin_y, coin_radius){
-    this.coin_x = coin_x;
-    this.coin_y = coin_y;
-    this.coin_radius = coin_radius;
+  constructor(){ 
+    this.radius = 8;
+    this.x = Math.floor(Math.random() * (canvas.width-this.radius-10))+10;
+    this.y = 0;
+   
   }
   drawCoin(){
     ctx.beginPath();
     ctx.fillStyle = "yellow";
-    ctx.arc(this.coin_x, this.coin_y, this.coin_radius, Math.PI*2, false);
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
     ctx.fill();
     ctx.closePath(); 
     
-    if (this.coin_y + coin_radius < canvas.height){
-      this.coin_y += coin_step;  
+    if (this.y + this.radius < canvas.height){
+      this.y += coin_step;  
     }
     else {
-      this.coin_y = 0;
-      this.coin_x = Math.floor(Math.random() * (canvas.width-coin_radius-10))+10;
+      this.x = Math.floor(Math.random() * (canvas.width-this.radius-10))+10;
+      this.y = 0;
     }
   }  
 }
@@ -148,14 +128,15 @@ class Coin{
 function draw(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   car.drawCar();
-  coin.drawCoin();
   barrier.drawBarrier();
+  coin.drawCoin();
   car.checkLose();
-  
+  car.checkCoin();
+  ctx.fillStyle = "white";
+  ctx.fillText("Score: " + score, 10,10);
 }
 
-
-let barrier = new Barrier(barrier_x, barrier_y, barrier_width, barrier_height); 
-let coin = new Coin(coin_x, coin_y, coin_radius);
-let car = new Car(car_x, car_y, car_width, car_height,'car2.png', barrier, coin);
+let barrier = new Barrier(); 
+let coin = new Coin();
+let car = new Car(car_img, barrier, coin);
 let interval = setInterval(draw,10);
