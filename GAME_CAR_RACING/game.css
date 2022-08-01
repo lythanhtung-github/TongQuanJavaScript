@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+
+canvas {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(16, 15, 15);
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    border : 1px black solid;
+}

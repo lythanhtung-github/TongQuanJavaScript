@@ -2,8 +2,8 @@ const LEFT = 37;
 const RIGHT = 39;
 let x = 100;
 let y = 100;
-let dx = 1;
-let dy = 1;
+let dx = 0.8;
+let dy = 0.8;
 let radius = 5;
 
 let bar_x = 110;
@@ -17,6 +17,10 @@ const gameOver_y = 80;
 
 let level = 1;
 
+//Khởi tạo canvas
+let canvas = document.querySelector("#myCanvas");
+let ctx = canvas.getContext("2d");
+
 class Ball {
     score = 0;
     constructor(x, y, dx, dy, radius, bar){
@@ -28,18 +32,10 @@ class Ball {
         this.bar = bar;
     }
 
-    setAttributes(x, y, dx, dy, radius){
-        this.x = x;
-        this.y = y;
-        this.dx = dx;
-        this.dy = dy;
-        this.radius = radius;
-    }
-
     drawBall(){
         ctx.beginPath();
+        ctx.fillStyle = "rgb(240, 248, 255)";
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
-        ctx.fillStyle = " rgb(240, 248, 255)";
         ctx.fill();
         ctx.closePath();
     }
@@ -103,7 +99,7 @@ function drawGameOver(ctx){
     ctx.closePath();   
 }
 
-document.addEventListener('keydown', controlBar)
+document.addEventListener('keydown', controlBar);
 function controlBar(e){
     switch(e.keyCode){
         case LEFT: 
@@ -117,18 +113,6 @@ function controlBar(e){
             }
             break; 
     }
-}
-
-let canvas = document.querySelector("#myCanvas");
-let ctx = canvas.getContext("2d");
-
-function draw() {
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ball.drawBall();
-    ball.checkBall();
-    bar.drawBar();
-
 }
 
 function reset(){
@@ -157,7 +141,14 @@ function updateLevel(score){
     if (score ==50){
         level += 1;
     }
-    result.innerHTML =level;
+    result.innerHTML = level;
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ball.drawBall();
+    ball.checkBall();
+    bar.drawBar();
 }
 
 let bar = new Bar(bar_x,bar_y, bar_width,bar_height); 
